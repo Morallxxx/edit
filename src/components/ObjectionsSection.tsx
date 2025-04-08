@@ -93,7 +93,6 @@ const PricingSection = () => {
                 "Consultas ilimitadas com clínico geral",
                 "Consultas ilimitadas com pediatra",
                 "Acesso a 17 especialidades médicas",
-                "Descontos em medicamentos e exames",
                 "Receitas com assinatura digital oficiais",
                 "Cadastro para até 5 familiares"
               ].map((item, index) => (
