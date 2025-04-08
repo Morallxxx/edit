@@ -31,8 +31,7 @@ const HeroSection = () => {
       </span> Carregue Seu Filho Com Febre Por Quilômetros
     </h1>
   </div>
-</div>
-         
+</div>  
 <h2 className="text-xl md:text-2xl text-[#626870] font-medium">
   Atendimento médico digno, 24 horas por dia, direto no seu celular.
   <span className="block mt-2 font-semibold">Sem fila. Sem espera. Sem humilhação.</span>
