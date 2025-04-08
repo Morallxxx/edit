@@ -24,11 +24,11 @@ const HeroSection: React.FC = () => {
       
       <div className="section-container relative z-10 flex flex-col lg:flex-row items-center overflow-hidden bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm">
         <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} p-8 lg:p-12`}>
-          <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-bold mb-2">Emergência Pediátrica 24h</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
-            <span className="relative inline-block border-b-4 border-a1blue pb-1 mr-2">Nunca Mais</span>
-            <span className="block mt-2">Percorra Horas Com Seu Filho</span> 
-            <span className="text-red-600 border-b-4 border-red-600 pb-1">Ardendo em Febre</span>
+          <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-bold mb-2">EMERGÊNCIA PEDIÁTRICA 24H</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight uppercase tracking-tight">
+            <span className="relative inline-block mr-2">NUNCA MAIS</span>
+            <span className="block mt-2">PERCORRA HORAS COM SEU FILHO</span> 
+            <span className="text-red-600">ARDENDO EM FEBRE</span>
           </h1>
           <p className="text-xl text-gray-600 mt-4">
             Atendimento médico especializado em minutos, onde você estiver. Seu filho merece cuidado imediato.
@@ -110,4 +110,3 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
-
