@@ -25,13 +25,8 @@ const HeroSection = () => {
 <div className="section-container relative z-10 flex flex-col lg:flex-row items-center">
   <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
-      <span className="relative inline-block">
-        <span className="relative">Nunca Mais</span>
-        <span className="absolute bottom-0 left-0 w-full h-3 bg-yellow-300 opacity-40 rounded-sm -z-10"></span>
-      </span> Carregue Seu Filho Com Febre Por Quilômetros
+      Nunca Mais Carregue Seu Filho Com Febre Por Quilômetros
     </h1>
-  </div>
-</div>  
 <h2 className="text-xl md:text-2xl text-[#626870] font-medium">
   Atendimento médico digno, 24 horas por dia, direto no seu celular.
   <span className="block mt-2 font-semibold">Sem fila. Sem espera. Sem humilhação.</span>
