@@ -1,9 +1,14 @@
-
-import { useState, useEffect } from 'react';
-import { Quote } from "lucide-react";
+import { useState, useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TestimonialsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 7;
+  const sliderRef = useRef<HTMLDivElement>(null);
+  
+  // Caminho das imagens de depoimentos
+  const depoimentos = Array.from({ length: totalSlides }, (_, i) => `/uploads/depoimento${i + 1}.jpg`);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -22,62 +27,96 @@ const TestimonialsSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const testimonials = [
-    {
-      quote: "Era 2h da manhã, minha bebê com febre... Em 3 minutos, uma médica já me acalmou pelo celular. Nunca mais me senti sozinha.",
-      author: "Maria Clara, mãe de primeira viagem",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-    },
-    {
-      quote: "É como ter uma médica no bolso. Já me salvou em noites difíceis quando meu filho teve crises de asma.",
-      author: "Camila, mãe solo",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
-    },
-    {
-      quote: "Nunca fui tão bem atendida, mesmo sem plano caro. Os médicos realmente escutam e te dão atenção. Vale cada centavo.",
-      author: "Luana, autônoma",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80"
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+  
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+  
+  useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollTo({
+        left: sliderRef.current.clientWidth * currentSlide,
+        behavior: 'smooth'
+      });
     }
-  ];
+  }, [currentSlide]);
   
   return (
     <section id="depoimentos" className="py-20 bg-white">
       <div className="section-container">
-        <h2 className="section-heading text-center">
-          Histórias de quem já está com a  Life
+        <h2 className="section-heading text-center mb-12">
+          Histórias de quem já está com a A1 Life
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8 mt-12">
-          {testimonials.map((testimonial, index) => (
+        <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+          {/* Carrossel de depoimentos */}
+          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-lg shadow-lg">
             <div 
-              key={index}
-              className={`testimonial-card flex flex-col ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
-              style={{ animationDelay: `${0.2 * index}s` }}
+              ref={sliderRef}
+              className="flex overflow-x-hidden snap-x snap-mandatory"
+              style={{ scrollbarWidth: 'none' }}
             >
-              <div className="absolute -top-5 -left-5 bg-a1red text-white p-2 rounded-full">
-                <Quote size={24} />
-              </div>
-              
-              <div className="flex items-center mb-4 mt-6">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.author} 
-                  className="w-16 h-16 rounded-full object-cover mr-4"
-                />
-                <p className="font-bold text-a1blue">{testimonial.author}</p>
-              </div>
-              
-              <p className="text-gray-600 italic flex-grow">"{testimonial.quote}"</p>
-              
-              <div className="mt-4">
-                {'★★★★★'.split('').map((star, i) => (
-                  <span key={i} className="text-yellow-500">
-                    {star}
-                  </span>
-                ))}
-              </div>
+              {depoimentos.map((src, index) => (
+                <div 
+                  key={index} 
+                  className="min-w-full w-full flex-shrink-0 snap-center"
+                >
+                  <img 
+                    src={src} 
+                    alt={`Depoimento de cliente ${index + 1}`}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+            
+            {/* Controles de navegação */}
+            <button 
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all"
+              aria-label="Depoimento anterior"
+            >
+              <ChevronLeft className="w-6 h-6 text-a1blue" />
+            </button>
+            
+            <button 
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all"
+              aria-label="Próximo depoimento"
+            >
+              <ChevronRight className="w-6 h-6 text-a1blue" />
+            </button>
+          </div>
+          
+          {/* Indicadores de slide */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {depoimentos.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  currentSlide === index ? 'bg-a1blue w-6' : 'bg-gray-300'
+                }`}
+                aria-label={`Ir para o depoimento ${index + 1}`}
+              />
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-600">
+              Estes são depoimentos reais de clientes que utilizam nossos serviços diariamente.
+            </p>
+            <a href="#assinar" className="mt-4 inline-block px-8 py-3 bg-a1blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+              QUERO EXPERIMENTAR
+            </a>
+          </div>
         </div>
         
         <div className={`mt-16 bg-gray-50 p-8 rounded-xl shadow-lg max-w-3xl mx-auto ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
