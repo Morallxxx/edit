@@ -40,8 +40,7 @@ const HeroSection = () => {
         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
       </svg>
       <span>Consulta em até 5 minutos após o chamado</span>
-    </div>
-  </div>
+
           <div className="pt-6">
             <a href="#assinar" className="cta-button inline-flex items-center space-x-2 group">
               <span>FALE COM UM MÉDICO AGORA</span>
