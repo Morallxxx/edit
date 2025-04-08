@@ -33,7 +33,7 @@ const OriginStorySection = () => {
           <div className={`mt-12 flex flex-col md:flex-row items-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
               <img 
-                src="uploads/foto-historia.webp" 
+                src="uploads/CRIANÇADOENTE.jpg" 
                 alt="Mãe com criança no colo" 
                 className="rounded-lg shadow-xl w-full h-auto"
               />
