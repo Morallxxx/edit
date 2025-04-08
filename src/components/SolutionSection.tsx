@@ -74,7 +74,7 @@ const SolutionSection = () => {
         </div>
       ))}
     </div>
-const SolutionSection = ({ isVisible }) => {
+
   return (
     <section id="publico-alvo" className="py-16 bg-gray-50">
       <div className="section-container">
