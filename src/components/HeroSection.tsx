@@ -22,16 +22,30 @@ const HeroSection = () => {
         <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-green-100 opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-red-100 opacity-30 animate-float" style={{animationDelay: '4s'}}></div>
       </div>     
-<div className="section-container relative z-10 flex flex-col lg:flex-row items-center overflow-hidden bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm">
+<div className="section-container relative z-10 flex flex-col lg:flex-row items-center overflow-hidden bg-gradient-to-br from-blue-900 to-black rounded-lg shadow-xl border border-blue-400/20">
   <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} p-8 lg:p-12`}>
-    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-2">Atendimento Pediátrico</span>
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
-      <span className="relative inline-block mr-2">
-        <span className="relative z-10">Nunca Mais</span>
-        <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300 opacity-40 rounded-sm -z-0"></span>
+    {/* Badge com animação de pulso */}
+    <span className="inline-block px-4 py-1.5 bg-blue-700 text-blue-100 rounded-full text-sm font-bold mb-4 shadow-lg animate-pulse">
+      EMERGÊNCIA PEDIÁTRICA 24H
+    </span>
+    
+    {/* Título com efeito de destaque dramático */}
+    <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-none tracking-tight">
+      <span className="relative inline-block mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">
+        <span className="relative z-10">NUNCA MAIS</span>
+        <span className="absolute -bottom-1 left-0 w-full h-3 bg-yellow-400 opacity-70 rounded-sm -z-0 transform -rotate-1"></span>
       </span>
-      Carregue Seu Filho Com Febre Por Quilômetros
+      <span className="block text-white drop-shadow-[0_2px_10px_rgba(0,149,255,0.5)]">Carregue Seu Filho Com</span>
+      <span className="block text-red-500 font-extrabold drop-shadow-[0_2px_6px_rgba(255,0,0,0.3)]">Febre Por Quilômetros</span>
     </h1>
+    
+    {/* Linha divisória com gradiente */}
+    <div className="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full my-4"></div>
+    
+    {/* Subtexto com destaque */}
+    <p className="text-xl text-blue-100 font-medium max-w-xl">
+      Médicos <span className="font-bold text-yellow-400">especialistas em pediatria</span> em sua casa em minutos, não em horas.
+    </p>
       
 <h2 className="text-xl md:text-2xl text-[#626870] font-medium">
   Atendimento médico digno, 24 horas por dia, direto no seu celular.
