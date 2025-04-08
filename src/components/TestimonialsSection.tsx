@@ -7,7 +7,7 @@ const TestimonialsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   
   // Caminho das imagens de depoimentos
-  const depoimentos = Array.from({ length: totalSlides }, (_, i) => `/uploads/depoimento${i + 1}.jpg`);
+  const depoimentos = Array.from({ length: totalSlides }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
   
   useEffect(() => {
     const handleScroll = () => {
