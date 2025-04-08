@@ -125,7 +125,6 @@ const SolutionSection = () => {
           <p className="text-gray-600">Se você ainda acredita que plano de saúde caro, 6 meses de carência e 3 horas de espera é "normal"... talvez você ainda não esteja pronta pra isso.</p>
           <p className="mt-2 text-gray-600">Mas quando se cansar de ser só mais um número, a A1 Life vai estar aqui. <span className="text-2xl">💥</span></p>
         </div>
-      ))}
     </div>
 
         <div className={`mt-12 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
