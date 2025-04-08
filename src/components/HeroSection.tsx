@@ -81,7 +81,7 @@ const HeroSection = () => {
           <div className="relative">
             <div className="bg-white p-6 rounded-xl shadow-xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
               <img 
-                src="uploads/criancas-1.webp" 
+                src="uploads/maeefilho.jpg" 
                 alt="Mãe sorrindo com celular e criança no colo" 
                 className="rounded-lg w-full h-auto object-cover"
                 loading="eager"
