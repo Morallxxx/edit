@@ -32,7 +32,7 @@ const ProblemSection = () => {
       <h2 className="section-heading relative inline-block pb-4">
         A <span className="text-[#df2026] font-bold">Síndrome</span> da Porta Fechada™
         <span className="absolute w-24 h-1 bg-[#df2026] bottom-0 left-1/2 transform -translate-x-1/2"></span>
-      </h2>
+     </p>
         
         <p className="section-subheading text-center">
           Você conhece bem essa história…
