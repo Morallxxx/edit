@@ -82,7 +82,7 @@ const SolutionSection = () => {
     </h2>
     
     <div className="space-y-8 max-w-4xl mx-auto">
-      {/* Mães Solo */}
+      
       <div className="flex items-start p-6 border-l-4 border-a1green bg-white rounded-r-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1">
         <div className="flex-shrink-0 mr-6">
           <span className="text-4xl" role="img" aria-label="Mães Solo">👩‍👧‍👦</span>
@@ -93,7 +93,7 @@ const SolutionSection = () => {
         </div>
       </div>
       
-      {/* Mulheres em Transição de Carreira */}
+  
       <div className="flex items-start p-6 border-l-4 border-a1green bg-white rounded-r-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1">
         <div className="flex-shrink-0 mr-6">
           <span className="text-4xl" role="img" aria-label="Mulheres em Transição de Carreira">💼</span>
@@ -104,7 +104,7 @@ const SolutionSection = () => {
         </div>
       </div>
       
-      {/* Profissionais Autônomas */}
+    
       <div className="flex items-start p-6 border-l-4 border-a1green bg-white rounded-r-lg shadow-sm hover:shadow-md transition-all transform hover:-translate-y-1">
         <div className="flex-shrink-0 mr-6">
           <span className="text-4xl" role="img" aria-label="Profissionais Autônomas">📱</span>
@@ -115,7 +115,7 @@ const SolutionSection = () => {
         </div>
       </div>
       
-      {/* Para quem não é */}
+    
       <div className="flex items-start p-6 mt-12 border-l-4 border-red-400 bg-white rounded-r-lg shadow-sm">
         <div className="flex-shrink-0 mr-6">
           <span className="text-4xl" role="img" aria-label="Para quem não é">🙅‍♂️</span>
