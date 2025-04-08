@@ -57,7 +57,7 @@ const TestimonialsSection = () => {
     <section id="depoimentos" className="py-20 bg-gray-900 text-white overflow-hidden">
       <div className="section-container">
         <h2 className="section-heading text-center mb-12 text-white">
-          Essa é a <span className="text-[#4cb050]">reação de quem já testou</span> essa <span className="text-[#4cb050]">metodologia inovadora:</span>
+          Essa é a <span className="text-[#4cb050]">reação de quem já testou</span> a <span className="text-[#4cb050]">A1 Life:</span>
         </h2>
         
         <div className={`relative overflow-hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
