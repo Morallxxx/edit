@@ -2,12 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 
 const TestimonialsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 7;
-  const sliderRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const totalDepoimentos = 7;
   
   // Caminho das imagens de depoimentos
-  const depoimentos = Array.from({ length: totalSlides }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
+  const depoimentos = Array.from({ length: totalDepoimentos }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -26,50 +25,79 @@ const TestimonialsSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Efeito para rotação automática do carrossel
+  // Efeito de animação contínua tipo "nuvem"
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
-    }, 3000); // Troca a cada 3 segundos
+    if (!carouselRef.current || !isVisible) return;
     
-    return () => clearInterval(interval);
-  }, [totalSlides]);
-  
-  // Efeito para atualizar a posição do scroll quando o slide muda
-  useEffect(() => {
-    if (sliderRef.current) {
-      sliderRef.current.scrollTo({
-        left: sliderRef.current.clientWidth * currentSlide,
-        behavior: 'smooth'
-      });
-    }
-  }, [currentSlide]);
+    let animationId: number;
+    let position = 0;
+    
+    const animate = () => {
+      position -= 0.5; // Velocidade do deslocamento
+      
+      // Resetar a posição quando necessário para criar um loop infinito
+      if (position <= -250) {
+        position = 0;
+      }
+      
+      if (carouselRef.current) {
+        carouselRef.current.style.transform = `translateX(${position}px)`;
+      }
+      
+      animationId = requestAnimationFrame(animate);
+    };
+    
+    animate();
+    
+    return () => cancelAnimationFrame(animationId);
+  }, [isVisible]);
   
   return (
-    <section id="depoimentos" className="py-20 bg-white">
+    <section id="depoimentos" className="py-20 bg-white overflow-hidden">
       <div className="section-container">
         <h2 className="section-heading text-center mb-12">
-          Histórias de quem já está com a A1 Life
+          Essa é a <span className="text-yellow-500">reação de quem já testou</span> essa <span className="text-yellow-500">metodologia inovadora:</span>
         </h2>
         
         <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-          {/* Carrossel automático de depoimentos */}
-          <div className="relative mx-auto max-w-4xl overflow-hidden rounded-lg shadow-lg">
-            <div 
-              ref={sliderRef}
-              className="flex overflow-x-hidden"
-              style={{ scrollbarWidth: 'none' }}
-            >
+          {/* Container para o efeito de nuvem */}
+          <div className="relative mx-auto max-w-6xl py-8">
+            <div className="flex" style={{ width: `${totalDepoimentos * 300}px` }} ref={carouselRef}>
+              {/* Primeira cópia dos depoimentos */}
               {depoimentos.map((src, index) => (
                 <div 
-                  key={index} 
-                  className="min-w-full w-full flex-shrink-0"
+                  key={`first-${index}`} 
+                  className="flex-shrink-0 px-2"
+                  style={{ width: '300px' }}
                 >
-                  <img 
-                    src={src} 
-                    alt={`Depoimento de cliente ${index + 1}`}
-                    className="w-full h-auto object-contain"
-                  />
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" 
+                       style={{ height: '220px' }}
+                  >
+                    <img 
+                      src={src} 
+                      alt={`Depoimento de cliente ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
+              
+              {/* Segunda cópia dos depoimentos para loop infinito */}
+              {depoimentos.map((src, index) => (
+                <div 
+                  key={`second-${index}`} 
+                  className="flex-shrink-0 px-2"
+                  style={{ width: '300px' }}
+                >
+                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" 
+                       style={{ height: '220px' }}
+                  >
+                    <img 
+                      src={src} 
+                      alt={`Depoimento de cliente ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
