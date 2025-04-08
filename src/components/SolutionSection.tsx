@@ -81,7 +81,7 @@ const SolutionSection = () => {
         <div className="section-container">
           <h2 className="section-heading text-center mb-12">
             <span className="text-gray-400 text-sm font-semibold tracking-wider uppercase block mb-2"></span>
-            PARA QUEM É
+            PARA QUEM É?
           </h2>
           
           <div className="space-y-8 max-w-4xl mx-auto">
