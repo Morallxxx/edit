@@ -32,6 +32,9 @@ const ProblemSection = () => {
       </span>
       <span className="absolute w-20 h-1 bg-[#df2026] bottom-0 left-1/2 transform -translate-x-1/2"></span>
     </h2>
+    <p className="text-center text-gray-600 max-w-2xl mx-auto mt-4 text-lg">
+      Quando você mais precisa, é quando menos consegue atendimento médico para seu filho.
+    </p>
         
         <p className="section-subheading text-center">
           Você conhece bem essa história…
