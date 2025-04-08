@@ -1,13 +1,16 @@
+import { useState, useEffect, useRef } from 'react';
 
-import { useState, useEffect } from 'react';
-import { Heart } from "lucide-react";
-
-const OriginStorySection = () => {
+const TestimonialsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const totalDepoimentos = 7;
+  
+  // Caminho das imagens de depoimentos
+  const depoimentos = Array.from({ length: totalDepoimentos }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
   
   useEffect(() => {
     const handleScroll = () => {
-      const element = document.getElementById('origem');
+      const element = document.getElementById('depoimentos');
       if (element) {
         const position = element.getBoundingClientRect();
         if (position.top < window.innerHeight * 0.75) {
@@ -22,54 +25,91 @@ const OriginStorySection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
+  // Efeito de animação infinita (rolagem contínua)
+  useEffect(() => {
+    if (!isVisible || !scrollContainerRef.current) return;
+    
+    const scrollContainer = scrollContainerRef.current;
+    const totalWidth = scrollContainer.scrollWidth;
+    const visibleWidth = scrollContainer.clientWidth;
+    let currentPosition = 0;
+    
+    const animateScroll = () => {
+      currentPosition -= 1; // Velocidade de rolagem
+      
+      // Quando elementos saem completamente pela esquerda, reposiciona para direita
+      if (Math.abs(currentPosition) >= totalWidth / 2) {
+        currentPosition = 0;
+      }
+      
+      scrollContainer.style.transform = `translateX(${currentPosition}px)`;
+      requestAnimationFrame(animateScroll);
+    };
+    
+    const animation = requestAnimationFrame(animateScroll);
+    
+    return () => {
+      cancelAnimationFrame(animation);
+    };
+  }, [isVisible]);
+  
   return (
-    <section id="origem" className="py-20 bg-white">
+    <section id="depoimentos" className="py-20 bg-gray-900 text-white overflow-hidden">
       <div className="section-container">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="section-heading text-center">
-            Nossa História de Origem
-          </h2>
-          
-          <div className={`mt-12 flex flex-col md:flex-row items-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <div className="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-              <img 
-                src="uploads/CRIANÇADOENTE.jpg" 
-                alt="Mãe com criança no colo" 
-                className="rounded-lg shadow-xl w-full h-auto"
-              />
-            </div>
-            
-            <div className="md:w-1/2">
-              <div className="prose prose-lg">
-                <h3 className="text-2xl font-bold text-a1blue mb-4">
-                  Tudo começou com uma mãe
-                </h3>
-                
-                <p className="text-gray-700 mb-4">
-                  Sozinha. De madrugada. Com o filho doente e nenhuma ajuda.
-                </p>
-                
-                <blockquote className="border-l-4 border-a1blue pl-4 italic mb-6">
-                  "Naquela noite, percebi que não era só sobre febre. Era sobre desamparo."
-                </blockquote>
-                
-                <p className="text-gray-700 mb-6">
-                  Depois disso, nasceu a  Life. Um jeito novo, humano e acessível de cuidar da saúde. Feito por quem viveu na pele. Feito por quem se importa.
-                </p>
-                
-                <div className="flex items-center">
-                  <Heart className="h-6 w-6 text-a1red mr-2" />
-                  <p className="text-a1blue font-bold">
-                    Porque saúde é mais do que tratamento, é sobre cuidado.
-                  </p>
+        <h2 className="section-heading text-center mb-12 text-white">
+          Essa é a <span className="text-[#4cb050]">reação de quem já testou</span> a <span className="text-[#ffffff]">A1 Life:</span>
+        </h2>
+        
+        <div className={`relative overflow-hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          {/* Container de rolagem infinita */}
+          <div className="max-w-full mx-auto" style={{ overflow: 'hidden' }}>
+            <div 
+              ref={scrollContainerRef} 
+              className="flex"
+              style={{ width: `${totalDepoimentos * 600}px` }} // Largura total para caber todos os depoimentos duplicados
+            >
+              {/* Primeira cópia dos depoimentos */}
+              {depoimentos.map((src, index) => (
+                <div 
+                  key={`first-${index}`} 
+                  className="flex-shrink-0 px-2"
+                  style={{ width: '300px' }}
+                >
+                  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src={src} 
+                      alt={`Depoimento de cliente ${index + 1}`}
+                      className="w-full h-auto object-cover rounded-lg"
+                    />
+                  </div>
                 </div>
-              </div>
+              ))}
+              
+              {/* Segunda cópia dos depoimentos para rolagem infinita */}
+              {depoimentos.map((src, index) => (
+                <div 
+                  key={`second-${index}`} 
+                  className="flex-shrink-0 px-2"
+                  style={{ width: '300px' }}
+                >
+                  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
+                    <img 
+                      src={src} 
+                      alt={`Depoimento de cliente ${index + 1}`}
+                      className="w-full h-auto object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           
-          <div className={`mt-16 text-center ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-            <a href="#assinar" className="cta-button">
-              FAÇA PARTE DESSA HISTÓRIA
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-300">
+              Estes são depoimentos reais de clientes que utilizam nossos serviços diariamente.
+            </p>
+            <a href="#assinar" className="mt-6 inline-block px-8 py-3 bg-[#4cb050] text-white font-semibold rounded-lg hover:bg-green-600 transition-colors">
+              QUERO EXPERIMENTAR
             </a>
           </div>
         </div>
@@ -78,4 +118,4 @@ const OriginStorySection = () => {
   );
 };
 
-export default OriginStorySection;
+export default TestimonialsSection;
