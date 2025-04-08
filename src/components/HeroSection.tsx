@@ -21,86 +21,18 @@ const HeroSection = () => {
         <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-100 opacity-30 animate-float" style={{animationDelay: '0s'}}></div>
         <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-green-100 opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-red-100 opacity-30 animate-float" style={{animationDelay: '4s'}}></div>
-      </div>
-      
-<div className="section-container relative z-10 flex flex-col lg:flex-row items-center py-12 md:py-20">
-  <div className={`w-full lg:w-1/2 space-y-8 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-    {/* Badge de destaque */}
-    <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100">
-      <span className="flex h-3 w-3 relative mr-2">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-a1blue opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-a1blue"></span>
-      </span>
-      <span className="text-a1blue font-medium text-sm">Atendimento 24h</span>
-    </div>
-    
-    {/* Título principal melhorado */}
+      </div>     
+<div className="section-container relative z-10 flex flex-col lg:flex-row items-center">
+  <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
     <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
       <span className="relative inline-block">
-        <span className="absolute -inset-1 -skew-y-3 bg-blue-100 opacity-30 rounded-lg transform -rotate-1"></span>
         <span className="relative">Nunca Mais</span>
-      </span>{" "}
-      Carregue Seu Filho Com{" "}
-      <span className="text-red-500 relative inline-block">
-        Febre
-        <svg className="absolute w-full h-3 -bottom-1 left-0 text-red-200" viewBox="0 0 100 12" preserveAspectRatio="none">
-          <path d="M0,0 Q50,12 100,0" stroke="currentColor" strokeWidth="3" fill="none" />
-        </svg>
-      </span>{" "}
-      Por Quilômetros
-      <div className="h-1 w-24 bg-a1blue mt-5 rounded-full"></div>
+        <span className="absolute bottom-0 left-0 w-full h-3 bg-yellow-300 opacity-40 rounded-sm -z-10"></span>
+      </span> Carregue Seu Filho Com Febre Por Quilômetros
     </h1>
-    
-    {/* Subtítulo com animação de entrada */}
-    <h2 className="text-xl md:text-2xl text-[#626870] font-medium animate-fadeIn">
-      Atendimento médico digno, 24 horas por dia, direto no seu celular.
-      <span className="block mt-2 font-semibold">Sem fila. Sem espera. Sem humilhação.</span>
-    </h2>
-    
-    {/* Botões de CTA */}
-    <div className="flex flex-col sm:flex-row gap-4 pt-3">
-      <button className="px-8 py-4 rounded-lg bg-a1blue text-white font-bold text-lg shadow-lg hover:shadow-xl transform transition hover:-translate-y-1 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200">
-        Consultar agora
-        <svg className="w-5 h-5 ml-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </button>
-      <button className="px-8 py-4 rounded-lg border-2 border-a1blue text-a1blue font-bold text-lg hover:bg-blue-50 transition focus:ring-4 focus:ring-blue-100">
-        Saiba como funciona
-      </button>
-    </div>
-    
-    {/* Elemento de confiança */}
-    <div className="flex items-center space-x-4 pt-4">
-      <div className="flex -space-x-2">
-        <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://via.placeholder.com/40" alt="Avatar" />
-        <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://via.placeholder.com/40" alt="Avatar" />
-        <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://via.placeholder.com/40" alt="Avatar" />
-      </div>
-      <div className="text-sm text-gray-500">
-        <span className="font-medium text-gray-700">+2.500 famílias</span> atendidas este mês
-      </div>
-    </div>
-  </div>
-  
-  {/* Lado direito - espaço para imagem ou ilustração */}
-  <div className={`w-full lg:w-1/2 mt-10 lg:mt-0 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-    <div className="relative">
-      <div className="absolute -left-6 -top-6 w-24 h-24 bg-blue-100 rounded-full opacity-50"></div>
-      <div className="absolute -right-8 -bottom-8 w-40 h-40 bg-yellow-100 rounded-full opacity-50"></div>
-      {/* Aqui você pode adicionar sua imagem, por exemplo: */}
-      <div className="relative z-10 bg-white p-4 rounded-2xl shadow-xl">
-        <img 
-          src="https://via.placeholder.com/600x500" 
-          alt="Médico atendendo criança" 
-          className="w-full h-auto rounded-xl"
-        />
-      </div>
-    </div>
   </div>
 </div>
-
-          
+         
 <h2 className="text-xl md:text-2xl text-[#626870] font-medium">
   Atendimento médico digno, 24 horas por dia, direto no seu celular.
   <span className="block mt-2 font-semibold">Sem fila. Sem espera. Sem humilhação.</span>
