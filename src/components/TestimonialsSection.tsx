@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from 'react';
 
 const TestimonialsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const totalDepoimentos = 7;
   
   // Caminho das imagens de depoimentos
-  const depoimentos = Array.from({ length: totalDepoimentos }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
+  const depoimentos = Array.from({ length: totalDepoimentos }, (_, i) => `/uploads/depoimento${i + 1}.jpg`);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -25,44 +25,49 @@ const TestimonialsSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Efeito de animação contínua tipo "nuvem"
+  // Efeito de animação infinita (rolagem contínua)
   useEffect(() => {
-    if (!carouselRef.current || !isVisible) return;
+    if (!isVisible || !scrollContainerRef.current) return;
     
-    let animationId: number;
-    let position = 0;
+    const scrollContainer = scrollContainerRef.current;
+    const totalWidth = scrollContainer.scrollWidth;
+    const visibleWidth = scrollContainer.clientWidth;
+    let currentPosition = 0;
     
-    const animate = () => {
-      position -= 0.5; // Velocidade do deslocamento
+    const animateScroll = () => {
+      currentPosition -= 1; // Velocidade de rolagem
       
-      // Resetar a posição quando necessário para criar um loop infinito
-      if (position <= -250) {
-        position = 0;
+      // Quando elementos saem completamente pela esquerda, reposiciona para direita
+      if (Math.abs(currentPosition) >= totalWidth / 2) {
+        currentPosition = 0;
       }
       
-      if (carouselRef.current) {
-        carouselRef.current.style.transform = `translateX(${position}px)`;
-      }
-      
-      animationId = requestAnimationFrame(animate);
+      scrollContainer.style.transform = `translateX(${currentPosition}px)`;
+      requestAnimationFrame(animateScroll);
     };
     
-    animate();
+    const animation = requestAnimationFrame(animateScroll);
     
-    return () => cancelAnimationFrame(animationId);
+    return () => {
+      cancelAnimationFrame(animation);
+    };
   }, [isVisible]);
   
   return (
-    <section id="depoimentos" className="py-20 bg-white overflow-hidden">
+    <section id="depoimentos" className="py-20 bg-gray-900 text-white overflow-hidden">
       <div className="section-container">
-        <h2 className="section-heading text-center mb-12">
-          Essa é a <span className="text-yellow-500">reação de quem já testou</span> essa <span className="text-yellow-500">metodologia inovadora:</span>
+        <h2 className="section-heading text-center mb-12 text-white">
+          Essa é a <span className="text-[#4cb050]">reação de quem já testou</span> essa <span className="text-[#4cb050]">metodologia inovadora:</span>
         </h2>
         
-        <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-          {/* Container para o efeito de nuvem */}
-          <div className="relative mx-auto max-w-6xl py-8">
-            <div className="flex" style={{ width: `${totalDepoimentos * 300}px` }} ref={carouselRef}>
+        <div className={`relative overflow-hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          {/* Container de rolagem infinita */}
+          <div className="max-w-full mx-auto" style={{ overflow: 'hidden' }}>
+            <div 
+              ref={scrollContainerRef} 
+              className="flex"
+              style={{ width: `${totalDepoimentos * 600}px` }} // Largura total para caber todos os depoimentos duplicados
+            >
               {/* Primeira cópia dos depoimentos */}
               {depoimentos.map((src, index) => (
                 <div 
@@ -70,32 +75,28 @@ const TestimonialsSection = () => {
                   className="flex-shrink-0 px-2"
                   style={{ width: '300px' }}
                 >
-                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" 
-                       style={{ height: '220px' }}
-                  >
+                  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
                     <img 
                       src={src} 
                       alt={`Depoimento de cliente ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-cover rounded-lg"
                     />
                   </div>
                 </div>
               ))}
               
-              {/* Segunda cópia dos depoimentos para loop infinito */}
+              {/* Segunda cópia dos depoimentos para rolagem infinita */}
               {depoimentos.map((src, index) => (
                 <div 
                   key={`second-${index}`} 
                   className="flex-shrink-0 px-2"
                   style={{ width: '300px' }}
                 >
-                  <div className="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300" 
-                       style={{ height: '220px' }}
-                  >
+                  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
                     <img 
                       src={src} 
                       alt={`Depoimento de cliente ${index + 1}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-cover rounded-lg"
                     />
                   </div>
                 </div>
@@ -103,43 +104,13 @@ const TestimonialsSection = () => {
             </div>
           </div>
           
-          <div className="text-center mt-8">
-            <p className="text-lg text-gray-600">
+          <div className="text-center mt-12">
+            <p className="text-lg text-gray-300">
               Estes são depoimentos reais de clientes que utilizam nossos serviços diariamente.
             </p>
-            <a href="#assinar" className="mt-4 inline-block px-8 py-3 bg-a1blue text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+            <a href="#assinar" className="mt-6 inline-block px-8 py-3 bg-[#4cb050] text-white font-semibold rounded-lg hover:bg-green-600 transition-colors">
               QUERO EXPERIMENTAR
             </a>
-          </div>
-        </div>
-        
-        <div className={`mt-16 bg-gray-50 p-8 rounded-xl shadow-lg max-w-3xl mx-auto ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-a1blue mb-6">
-              Atendimento com Médicos Reais, de Verdade
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex flex-col items-center">
-                <div className="mb-3 bg-blue-50 p-3 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-a1blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                </div>
-                <p className="text-gray-700">
-                  Todos os profissionais possuem CRM ativo e registro válido
-                </p>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="mb-3 bg-blue-50 p-3 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-a1blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <p className="text-gray-700">
-                  Receituário com assinatura digital oficial válida em todo o país
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
