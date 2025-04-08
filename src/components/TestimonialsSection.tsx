@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TestimonialsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,7 +7,7 @@ const TestimonialsSection = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   
   // Caminho das imagens de depoimentos
-  const depoimentos = Array.from({ length: totalSlides }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
+  const depoimentos = Array.from({ length: totalSlides }, (_, i) => `/uploads/depoimento${i + 1}.jpg`);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -27,18 +26,16 @@ const TestimonialsSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
+  // Efeito para rotação automática do carrossel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }, 3000); // Troca a cada 3 segundos
+    
+    return () => clearInterval(interval);
+  }, [totalSlides]);
   
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-  
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
-  
+  // Efeito para atualizar a posição do scroll quando o slide muda
   useEffect(() => {
     if (sliderRef.current) {
       sliderRef.current.scrollTo({
@@ -55,18 +52,18 @@ const TestimonialsSection = () => {
           Histórias de quem já está com a A1 Life
         </h2>
         
-        <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-          {/* Carrossel de depoimentos */}
+        <div className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          {/* Carrossel automático de depoimentos */}
           <div className="relative mx-auto max-w-4xl overflow-hidden rounded-lg shadow-lg">
             <div 
               ref={sliderRef}
-              className="flex overflow-x-hidden snap-x snap-mandatory"
+              className="flex overflow-x-hidden"
               style={{ scrollbarWidth: 'none' }}
             >
               {depoimentos.map((src, index) => (
                 <div 
                   key={index} 
-                  className="min-w-full w-full flex-shrink-0 snap-center"
+                  className="min-w-full w-full flex-shrink-0"
                 >
                   <img 
                     src={src} 
@@ -76,37 +73,6 @@ const TestimonialsSection = () => {
                 </div>
               ))}
             </div>
-            
-            {/* Controles de navegação */}
-            <button 
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all"
-              aria-label="Depoimento anterior"
-            >
-              <ChevronLeft className="w-6 h-6 text-a1blue" />
-            </button>
-            
-            <button 
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all"
-              aria-label="Próximo depoimento"
-            >
-              <ChevronRight className="w-6 h-6 text-a1blue" />
-            </button>
-          </div>
-          
-          {/* Indicadores de slide */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {depoimentos.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all ${
-                  currentSlide === index ? 'bg-a1blue w-6' : 'bg-gray-300'
-                }`}
-                aria-label={`Ir para o depoimento ${index + 1}`}
-              />
-            ))}
           </div>
           
           <div className="text-center mt-8">
