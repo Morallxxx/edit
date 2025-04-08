@@ -23,17 +23,11 @@ const ProblemSection = () => {
   }, []);
   
   return (
-<div className="section-container relative z-10 flex flex-col lg:flex-row items-center overflow-hidden bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm">
-  <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} p-8 lg:p-12`}>
-    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-2">Atendimento Pediátrico</span>
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
-      <span className="relative inline-block mr-2">
-        <span className="relative z-10">Nunca Mais</span>
-        <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300 opacity-40 rounded-sm -z-0"></span>
-      </span>
-      Carregue Seu Filho Com Febre Por Quilômetros
-    </h1>
-        
+<section id="problem-section" className="py-20 bg-gray-50">
+  <div className="section-container">
+    <h2 className="section-heading text-center">
+      A <span className="text-[#df2026] font-bold">Síndrome</span> da Porta Fechada™
+    </h2>
         <p className="section-subheading text-center">
           Você conhece bem essa história…
         </p>
