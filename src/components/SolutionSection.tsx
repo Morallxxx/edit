@@ -80,8 +80,8 @@ const SolutionSection = () => {
       <section id="publico-alvo" className="py-16 bg-gray-50">
         <div className="section-container">
           <h2 className="section-heading text-center mb-12">
-            <span className="text-gray-400 text-sm font-semibold tracking-wider uppercase block mb-2">4)</span>
-            PÚBLICO-ALVO
+            <span className="text-gray-400 text-sm font-semibold tracking-wider uppercase block mb-2"></span>
+            PARA QUEM É
           </h2>
           
           <div className="space-y-8 max-w-4xl mx-auto">
