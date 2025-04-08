@@ -24,15 +24,11 @@ const HeroSection: React.FC = () => {
       
       <div className="section-container relative z-10 flex flex-col lg:flex-row items-center overflow-hidden bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm">
         <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} p-8 lg:p-12`}>
-          <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-bold mb-2 animate-pulse">Emergência Pediátrica 24h</span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-            <span className="relative inline-block mr-2">
-              <span className="relative z-10 text-a1blue">Nunca Mais</span>
-              <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300 opacity-60 rounded-sm -z-0"></span>
-            </span>
-            <span className="block mt-2 text-gray-800">Viva o <span className="text-red-600">Desespero</span> de</span>
-            <span className="block bg-gradient-to-r from-a1blue to-blue-600 bg-clip-text text-transparent">Horas em Emergências</span> 
-            <span className="block mt-1">Com Seu Filho <span className="italic text-red-600 font-bold">Ardendo em Febre</span></span>
+          <span className="inline-block px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm font-bold mb-2">Emergência Pediátrica 24h</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
+            <span className="relative inline-block border-b-4 border-a1blue pb-1 mr-2">Nunca Mais</span>
+            <span className="block mt-2">Percorra Horas Com Seu Filho</span> 
+            <span className="text-red-600 border-b-4 border-red-600 pb-1">Ardendo em Febre</span>
           </h1>
           <p className="text-xl text-gray-600 mt-4">
             Atendimento médico especializado em minutos, onde você estiver. Seu filho merece cuidado imediato.
@@ -114,3 +110,4 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+
