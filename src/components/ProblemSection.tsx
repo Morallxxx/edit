@@ -111,11 +111,7 @@ const ProblemSection = () => {
       <p className="text-lg text-left text-gray-700">Sem depender de sorte.</p>
     </div>
   </div>
-  
-  <div className="mt-8">
-    <a href="#assinar" className="cta-button">
-      QUERO ESTA FACILIDADE
-    </a>
+ </section>
   );
 };
 
