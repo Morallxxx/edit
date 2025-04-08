@@ -6,7 +6,7 @@ const TestimonialsSection = () => {
   const totalDepoimentos = 7;
   
   // Caminho das imagens de depoimentos
-  const depoimentos = Array.from({ length: totalDepoimentos }, (_, i) => `/uploads/depoimento${i + 1}.jpg`);
+  const depoimentos = Array.from({ length: totalDepoimentos }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
   
   useEffect(() => {
     const handleScroll = () => {
