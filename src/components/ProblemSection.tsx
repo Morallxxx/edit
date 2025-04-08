@@ -23,11 +23,15 @@ const ProblemSection = () => {
   }, []);
   
   return (
-    <section id="problem-section" className="py-20 bg-gray-50">
-      <div className="section-container">
-        <h2 className="section-heading text-center">
-          A Síndrome da Porta Fechada™
-        </h2>
+<section id="problem-section" className="py-20 bg-gray-50">
+  <div className="section-container">
+    <h2 className="section-heading text-center relative inline-block mx-auto mb-6">
+      <span className="absolute -top-6 left-0 w-full text-gray-200 text-sm font-light tracking-wider text-center">PROBLEMA PRINCIPAL</span>
+      <span className="relative inline-block pb-2 px-4 border-b-4 border-gray-200">
+        A <span className="text-[#df2026] font-bold">Síndrome</span> da Porta Fechada™
+      </span>
+      <span className="absolute w-20 h-1 bg-[#df2026] bottom-0 left-1/2 transform -translate-x-1/2"></span>
+    </h2>
         
         <p className="section-subheading text-center">
           Você conhece bem essa história…
