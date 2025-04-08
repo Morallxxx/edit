@@ -42,11 +42,6 @@ const HowItWorksSection = () => {
       icon: <Calendar className="h-10 w-10 text-a1blue" />,
       title: "Agende especialistas direto no app",
       description: "Acesso a 17 especialidades médicas diferentes."
-    },
-    {
-      icon: <Pill className="h-10 w-10 text-a1blue" />,
-      title: "Receba descontos em medicamentos",
-      description: "Economize em remédios e exames com nossos parceiros."
     }
   ];
   
