@@ -29,10 +29,11 @@ const HeroSection = () => {
             Nunca Mais Carregue Seu Filho Com Febre Por Quilômetros
           </h1>
           
-          <h2 className="text-xl md:text-2xl text-gray-700 font-medium">
-            Atendimento médico digno, 24 horas por dia, direto no seu celular.
-            <span className="block mt-2 font-semibold">Sem fila. Sem espera. Sem humilhação.</span>
-          </h2>
+<h2 className="text-xl md:text-2xl text-[#626870] font-medium">
+  Atendimento médico digno, 24 horas por dia, direto no seu celular.
+  <span className="block mt-2 font-semibold">Sem fila. Sem espera. Sem humilhação.</span>
+</h2>  *Teste Head*
+
           
           <div className="pt-6">
             <a href="#assinar" className="cta-button inline-flex items-center space-x-2 group">
