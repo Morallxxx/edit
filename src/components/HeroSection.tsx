@@ -1,8 +1,7 @@
-
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircle, Clock, ArrowRight } from "lucide-react";
 
-const HeroSection = () => {
+const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
@@ -22,24 +21,26 @@ const HeroSection = () => {
         <div className="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-green-100 opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
         <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-red-100 opacity-30 animate-float" style={{animationDelay: '4s'}}></div>
       </div>     
-<div className="section-container relative z-10 flex flex-col lg:flex-row items-center overflow-hidden bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm">
-  <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} p-8 lg:p-12`}>
-    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-bold mb-2">Emergência Pediátrica 24h</span>
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
-      <span className="relative inline-block mr-2">
-        <span className="relative z-10">Nunca Mais</span>
-        <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300 opacity-40 rounded-sm -z-0"></span>
-      </span>
-      Percorra Horas Com Seu Filho Ardendo em Febre
-    </h1>
-    <p className="text-xl text-gray-600 mt-4">
-      Atendimento médico especializado em minutos, onde você estiver. Seu filho merece cuidado imediato.
-    </p>
-    <div className="flex items-center mt-4 text-sm text-gray-500">
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
-        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-      </svg>
-      <span>Consulta em até 5 minutos após o chamado</span>
+      
+      <div className="section-container relative z-10 flex flex-col lg:flex-row items-center overflow-hidden bg-gradient-to-br from-white to-blue-50 rounded-lg shadow-sm">
+        <div className={`w-full lg:w-1/2 space-y-6 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} p-8 lg:p-12`}>
+          <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-bold mb-2">Emergência Pediátrica 24h</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-a1blue leading-tight">
+            <span className="relative inline-block mr-2">
+              <span className="relative z-10">Nunca Mais</span>
+              <span className="absolute bottom-2 left-0 w-full h-3 bg-yellow-300 opacity-40 rounded-sm -z-0"></span>
+            </span>
+            Percorra Horas Com Seu Filho Ardendo em Febre
+          </h1>
+          <p className="text-xl text-gray-600 mt-4">
+            Atendimento médico especializado em minutos, onde você estiver. Seu filho merece cuidado imediato.
+          </p>
+          <div className="flex items-center mt-4 text-sm text-gray-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span>Consulta em até 5 minutos após o chamado</span>
+          </div>
 
           <div className="pt-6">
             <a href="#assinar" className="cta-button inline-flex items-center space-x-2 group">
