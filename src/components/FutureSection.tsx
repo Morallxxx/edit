@@ -81,7 +81,7 @@ const FutureSection = () => {
                 </div>
                 
                 <p className="mt-6 text-xl font-bold text-a1blue">
-                   Life é a paz que cabe no seu bolso.
+                   A 1 Life é a paz que cabe no seu bolso.
                 </p>
               </div>
             </div>
