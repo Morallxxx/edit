@@ -80,7 +80,7 @@ const Footer = () => {
                 <span>Médicos com CRM Ativo</span>
               </div>
 <div className="flex items-center">
-  <Shield className="h-6 w-6 mr-2 text-[#013e7d]" />
+  <Shield className="h-6 w-6 mr-2 text-[#e6ffff]" />
   <a
     href="https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf"
     target="_blank"
