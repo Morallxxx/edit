@@ -70,25 +70,23 @@ const ProblemSection = () => {
         </div>        
 <div className={`mt-16 bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
   <h3 className="text-2xl font-bold text-a1blue mb-4">A OPORTUNIDADE</h3>
-    <span className="block mt-2 font-medium">
-      Sem sair de casa.
-    </span>
-    <span className="block mt-1 font-medium">
-      Sem pegar ônibus.
-    </span>
-    <span className="block mt-1 font-medium">
-      Sem arrastar criança no colo.
-    </span>
-    <span className="block mt-1 font-medium">
-      Sem depender de sorte.
-    </span>
-  </p>
+  <span className="block mt-2 font-medium">
+    Sem sair de casa.
+  </span>
+  <span className="block mt-1 font-medium">
+    Sem pegar ônibus.
+  </span>
+  <span className="block mt-1 font-medium">
+    Sem arrastar criança no colo.
+  </span>
+  <span className="block mt-1 font-medium">
+    Sem depender de sorte.
+  </span>
   <div className="mt-8">
     <a href="#assinar" className="cta-button">
       QUERO ESTA FACILIDADE
     </a>
   </div>
-</div>
 </div>
 </section>
   );
