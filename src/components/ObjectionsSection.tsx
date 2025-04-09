@@ -3,7 +3,7 @@ import { CheckCircle, Clock, AlertTriangle } from "lucide-react";
 
 const PricingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [countdown, setCountdown] = useState({ hours: 2, minutes: 0, seconds: 0 });
+  const [countdown, setCountdown] = useState({ hours: 0, minutes: 10, seconds: 0 });
   
   useEffect(() => {
     const handleScroll = () => {
