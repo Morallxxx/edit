@@ -38,7 +38,7 @@ const FAQSection = () => {
     },
     {
       question: "Tem suporte humano?",
-      answer: "Sim, temos equipe de atendimento pronta pra te ajudar. Você pode entrar em contato via chat no aplicativo ou WhatsApp, com resposta em minutos."
+      answer: "Sim, temos equipe de atendimento pronta pra te ajudar."
     },
     {
   question: "É atendimento de verdade ou robô?",
@@ -46,7 +46,7 @@ const FAQSection = () => {
 },
     {
       question: "Posso incluir meu filho ou parceiro?",
-      answer: "Sim! O plano  Life Família permite cadastrar até 5 dependentes. Todos terão acesso aos mesmos serviços, sem custo adicional."
+      answer: "Sim! Oferecemos planos familiares. Fale com a equipe pelo botão."
     },
  {
   question: "Mas é confiável?",
