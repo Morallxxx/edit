@@ -57,7 +57,7 @@ const PricingSection = () => {
             
             <div className="p-6 flex flex-col items-center">
               <div className="my-4">
-                <img src="/uploads/product-single.png" alt="Plano 1 Mês" className="h-32 object-contain" />
+                <img src="/uploads/mockup.webp" alt="Plano 1 Mês" className="h-32 object-contain" />
               </div>
               
               <div className="flex items-end mt-4">
@@ -102,7 +102,7 @@ const PricingSection = () => {
             
             <div className="p-6 flex flex-col items-center">
               <div className="my-4">
-                <img src="/uploads/product-six.png" alt="Plano 6 Meses" className="h-32 object-contain" />
+                <img src="/uploads/mockup.webp" alt="Plano 6 Meses" className="h-32 object-contain" />
               </div>
               
               <div className="flex items-end mt-4">
@@ -151,7 +151,7 @@ const PricingSection = () => {
             
             <div className="p-6 flex flex-col items-center">
               <div className="my-4">
-                <img src="/uploads/product-three.png" alt="Plano 3 Meses" className="h-32 object-contain" />
+                <img src="/uploads/mockup.webp" alt="Plano 3 Meses" className="h-32 object-contain" />
               </div>
               
               <div className="flex items-end mt-4">
