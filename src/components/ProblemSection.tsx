@@ -62,38 +62,42 @@ const ProblemSection = () => {
               <div className="mb-4">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-a1blue">{item.title}</h3>
+              <h3 className="text-xl font-bold mb-2 text-[#013e7d]">{item.title}</h3>
               <p className="text-gray-600">{item.description}</p>
             </div>
           ))}
-        </div>        
-      <div className={`mt-16 bg-gradient-to-r from-white to-white p-8 rounded-xl shadow-2xl max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}> 
-  <h3 className="text-3xl font-extrabold text-[#013e7d] mb-6">A OPORTUNIDADE</h3>
-  <div className="flex flex-col items-center space-y-4">
-    <span className="block text-lg font-medium text-[#013e7d] bg-[#e6eef6] px-5 py-2 rounded-full shadow-md">
-      Sem sair de casa.
-    </span>
-    <span className="block text-lg font-medium text-[#013e7d] bg-[#e6eef6] px-5 py-2 rounded-full shadow-md">
-      Sem pegar ônibus.
-    </span>
-    <span className="block text-lg font-medium text-[#013e7d] bg-[#e6eef6] px-5 py-2 rounded-full shadow-md">
-      Sem arrastar criança no colo.
-    </span>
-    <span className="block text-lg font-medium text-[#013e7d] bg-[#e6eef6] px-5 py-2 rounded-full shadow-md">
-      Sem depender de sorte.
-    </span>
-  </div>
-</div>
-          <div className="mt-8">
-            <a href="#assinar" className="cta-button inline-block px-8 py-4 bg-[#4cb050] text-white font-bold rounded-lg shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105">
-              QUERO ESTA FACILIDADE
-            </a>
+        </div>  
+
+        {/* BLOCO DA OPORTUNIDADE */}
+        <div className={`mt-16 bg-gradient-to-r from-white to-white p-8 rounded-xl shadow-2xl max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
+          <h3 className="text-3xl font-extrabold text-[#013e7d] mb-6">A OPORTUNIDADE</h3>
+          <div className="flex flex-col items-center space-y-4">
+            {[
+              "Sem sair de casa.",
+              "Sem pegar ônibus.",
+              "Sem arrastar criança no colo.",
+              "Sem depender de sorte."
+            ].map((text, i) => (
+              <span key={i} className="block text-lg font-medium text-[#013e7d] bg-[#e6eef6] px-5 py-2 rounded-full shadow-md">
+                {text}
+              </span>
+            ))}
           </div>
         </div>
+
+        {/* BOTÃO DE AÇÃO */}
+        <div className="mt-8 text-center">
+          <a
+            href="#assinar"
+            className="cta-button inline-block px-8 py-4 bg-[#013e7d] text-white font-bold rounded-lg shadow-lg hover:bg-blue-900 transition-transform transform hover:scale-105"
+          >
+            QUERO ESTA FACILIDADE
+          </a>
+        </div>
+
       </div>
     </section>
   );
 };
 
 export default ProblemSection;
-
