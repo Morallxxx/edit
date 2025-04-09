@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Shield, Award, FileCheck } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,7 +36,7 @@ const TestimonialsSection = () => {
     let currentPosition = 0;
     
     const animateScroll = () => {
-      currentPosition -= 1; // Velocidade de rolagem
+      currentPosition -= 0.3; // Velocidade de rolagem reduzida
       
       // Quando elementos saem completamente pela esquerda, reposiciona para direita
       if (Math.abs(currentPosition) >= totalWidth / 2) {
@@ -54,10 +55,10 @@ const TestimonialsSection = () => {
   }, [isVisible]);
   
   return (
-    <section id="depoimentos" className="py-20 bg-gray-900 text-white overflow-hidden">
+    <section id="depoimentos" className="py-20 bg-white text-gray-800 overflow-hidden">
       <div className="section-container">
-        <h2 className="section-heading text-center mb-12 text-white">
-          Essa é a <span className="text-[#4cb050]">reação de quem já testou</span> a <span className="text-[#ffffff]">A1 Life:</span>
+        <h2 className="section-heading text-center mb-12 text-gray-900">
+          Essa é a <span className="text-[#4cb050]">reação de quem já testou</span> a <span className="text-gray-900 font-bold">A1 Life:</span>
         </h2>
         
         <div className={`relative overflow-hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
@@ -75,7 +76,7 @@ const TestimonialsSection = () => {
                   className="flex-shrink-0 px-2"
                   style={{ width: '300px' }}
                 >
-                  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
+                  <div className="bg-gray-100 rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
                     <img 
                       src={src} 
                       alt={`Depoimento de cliente ${index + 1}`}
@@ -92,7 +93,7 @@ const TestimonialsSection = () => {
                   className="flex-shrink-0 px-2"
                   style={{ width: '300px' }}
                 >
-                  <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
+                  <div className="bg-gray-100 rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
                     <img 
                       src={src} 
                       alt={`Depoimento de cliente ${index + 1}`}
@@ -105,12 +106,72 @@ const TestimonialsSection = () => {
           </div>
           
           <div className="text-center mt-12">
-            <p className="text-lg text-gray-300">
+            <p className="text-lg text-gray-700">
               Estes são depoimentos reais de clientes que utilizam nossos serviços diariamente.
             </p>
             <a href="#assinar" className="mt-6 inline-block px-8 py-3 bg-[#4cb050] text-white font-semibold rounded-lg hover:bg-green-600 transition-colors">
               QUERO EXPERIMENTAR
             </a>
+          </div>
+        </div>
+        
+        {/* Seção de autoridade e segurança */}
+        <div className={`mt-20 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">
+            <span className="text-[#4cb050]">📊</span> Autoridade e Segurança Total no Atendimento
+          </h3>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-[#4cb050] hover:shadow-xl transition-shadow">
+              <div className="flex items-start">
+                <div className="bg-[#4cb050] p-3 rounded-lg mr-4">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2">
+                    <span className="text-[#4cb050]">🔒</span> Atendimento com Médicos Reais, de Verdade
+                  </h4>
+                  <p className="text-gray-600">
+                    Todos os profissionais possuem CRM ativo, registro válido e são qualificados nas suas especialidades.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Card 2 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-[#4cb050] hover:shadow-xl transition-shadow">
+              <div className="flex items-start">
+                <div className="bg-[#4cb050] p-3 rounded-lg mr-4">
+                  <Award className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2">
+                    <span className="text-[#4cb050]">✅</span> Autorizado pelo Ministério da Saúde
+                  </h4>
+                  <p className="text-gray-600">
+                    Nosso sistema segue 100% das normas da telemedicina no Brasil — com respaldo legal e clínico.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Card 3 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-[#4cb050] hover:shadow-xl transition-shadow">
+              <div className="flex items-start">
+                <div className="bg-[#4cb050] p-3 rounded-lg mr-4">
+                  <FileCheck className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-2">
+                    <span className="text-[#4cb050]">🖋️</span> Receituário com Assinatura Digital Oficial
+                  </h4>
+                  <p className="text-gray-600">
+                    Todas as prescrições têm validação jurídica, exatamente como um receituário físico — com assinatura digital médica reconhecida e aceita em todo o país.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
