@@ -109,7 +109,6 @@ const PricingSection = () => {
               
               <div className="text-center text-sm">
                 <p className="font-bold">TOTAL: <span className="line-through">R$99</span> R$79</p>
-                <p>+ FRETE</p>
               </div>
             </div>
           </div>
@@ -158,7 +157,6 @@ const PricingSection = () => {
               
               <div className="text-center text-sm">
                 <p className="font-bold">TOTAL: <span className="line-through">R$594</span> R$297</p>
-                <p className="text-red-600">+ FRETE GRÁTIS</p>
               </div>
             </div>
           </div>
@@ -203,7 +201,6 @@ const PricingSection = () => {
               
               <div className="text-center text-sm">
                 <p className="font-bold">TOTAL: <span className="line-through">R$297</span> R$207</p>
-                <p className="text-red-600">+ FRETE GRÁTIS</p>
               </div>
             </div>
           </div>
