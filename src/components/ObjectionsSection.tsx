@@ -73,7 +73,7 @@ const PricingSection = () => {
           <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-lg border-2 border-gray-200">
             <div className="bg-blue-100 p-4 text-center">
               <h3 className="font-bold text-gray-800">Plano Mensal</h3>
-              <p className="text-sm text-gray-600">1 mês de atendimento</p>
+              <p className="font-bold text-white">1 mês de atendimento</p>
             </div>
             
             <div className="p-6 flex flex-col items-center">
@@ -118,7 +118,7 @@ const PricingSection = () => {
           <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-2xl border-4 border-green-500 transform md:scale-105 md:-translate-y-2 z-10">
             <div className="bg-green-500 p-4 text-center relative">
               <h3 className="font-bold text-white">Melhor Oferta</h3>
-              <p className="text-sm text-white">6 meses de atendimento</p>
+              <p className="font-bold text-white">6 meses de atendimento</p>
             </div>
             
             <div className="p-6 flex flex-col items-center">
@@ -167,7 +167,7 @@ const PricingSection = () => {
           <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-lg border-2 border-gray-200">
             <div className="bg-blue-100 p-4 text-center">
               <h3 className="font-bold text-gray-800">Boa Oferta</h3>
-              <p className="text-sm text-gray-600">3 meses de atendimento</p>
+              <p className="font-bold text-white">3 meses de atendimento</p>
             </div>
             
             <div className="p-6 flex flex-col items-center">
