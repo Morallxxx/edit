@@ -116,7 +116,7 @@ const FAQSection = () => {
         <div className={`mt-12 text-center ${isVisible ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
           <p className="text-xl text-gray-600 mb-6">Ainda tem dúvidas? Entre em contato conosco</p>
           <a 
-            href="https://wa.me/5511999999999" 
+            href="https://wa.me/31997703573" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center text-a1blue hover:text-a1blue-light font-bold"
