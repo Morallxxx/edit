@@ -54,7 +54,7 @@ const OriginStorySection = () => {
                 </blockquote>
                 
                 <p className="text-gray-700 mb-6">
-                  Depois disso, nasceu a  1A Life. Um jeito novo, humano e acessível de cuidar da saúde. Feito por quem viveu na pele. Feito por quem se importa.
+                  Depois disso, nasceu a A 1 Life. Um jeito novo, humano e acessível de cuidar da saúde. Feito por quem viveu na pele. Feito por quem se importa.
                 </p>
                 
                 <div className="flex items-center">
