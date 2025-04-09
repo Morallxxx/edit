@@ -70,8 +70,6 @@ const ProblemSection = () => {
         </div>        
 <div className={`mt-16 bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
   <h3 className="text-2xl font-bold text-a1blue mb-4">A OPORTUNIDADE</h3>
-  <p className="text-lg">
-    Imagine poder falar com um médico em até 5 minutos...
     <span className="block mt-2 font-medium">
       Sem sair de casa.
     </span>
