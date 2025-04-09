@@ -79,10 +79,17 @@ const Footer = () => {
                 <Shield className="h-6 w-6 mr-2" />
                 <span>Médicos com CRM Ativo</span>
               </div>
-              <div className="flex items-center">
-                <Shield className="h-6 w-6 mr-2" />
-                <span>Telemedicina Resolução CFM nº 2.299/21</span>
-              </div>
+<div className="flex items-center">
+  <Shield className="h-6 w-6 mr-2 text-[#013e7d]" />
+  <a
+    href="https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#013e7d] underline hover:text-blue-800 transition"
+  >
+    Telemedicina Resolução CFM nº 2.299/21
+  </a>
+</div>
             </div>
           </div>
         </div>
@@ -90,7 +97,7 @@ const Footer = () => {
         <hr className="border-gray-700 mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p>© 2025  Life. Todos os direitos reservados.</p>
+          <p>© 2025 A 1 Life. Todos os direitos reservados.</p>
           <div className="flex items-center mt-4 md:mt-0">
             <span>Feito com</span>
             <Heart className="h-4 w-4 text-a1red mx-1" />
