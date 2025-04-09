@@ -44,10 +44,26 @@ const FAQSection = () => {
       question: "Posso incluir meu filho ou parceiro?",
       answer: "Sim! O plano  Life Família permite cadastrar até 5 dependentes. Todos terão acesso aos mesmos serviços, sem custo adicional."
     },
-    {
-      question: "Mas é confiável?",
-      answer: "Sim. Atendimentos feitos por médicos com CRM ativo, com assinatura digital válida em todo o Brasil, conforme Resolução CFM nº 2.299/21. Nosso índice de satisfação é de 4.9/5."
-    },
+ {
+  question: "Mas é confiável?",
+  answer: (
+    <>
+      Sim. Atendimentos feitos por médicos com CRM ativo, com assinatura digital válida em todo o Brasil, conforme{" "}
+      <a 
+        href="https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="text-a1blue hover:underline inline-flex items-center"
+      >
+        Resolução CFM nº 2.299/21
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 ml-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+      . Nosso índice de satisfação é de 4.9/5.
+    </>
+  )
+},
     {
       question: "E se for grave?",
       answer: "Orientamos, direcionamos. 74% dos casos evitam emergências com nosso primeiro atendimento. Quando a situação exige atendimento presencial, nossos médicos orientam sobre o melhor local para buscar ajuda."
