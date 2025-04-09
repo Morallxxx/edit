@@ -188,17 +188,24 @@ const PricingSection = () => {
           </div>
         </div>
         
-        <div className={`max-w-4xl mx-auto mt-12 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-          <div className="bg-gray-50 p-6 rounded-xl">
-            <div className="flex items-center justify-center mb-4">
-              <Clock className="h-6 w-6 text-a1green mr-2" />
-              <span className="font-semibold">Garantia de 30 Dias Sem Risco</span>
-            </div>
-            <p className="text-gray-600 text-center max-w-2xl mx-auto">
-              Se você não sentir na pele que isso é uma verdadeira proteção para você e sua família, receba seu dinheiro de volta imediatamente, sem perguntas ou enrolação.
-            </p>
-          </div>
-        </div>
+<div className={`max-w-4xl mx-auto mt-12 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
+  <div className="bg-gray-50 p-6 rounded-xl">
+    <h4 className="text-xl font-bold text-a1blue text-center mb-4">GARANTIA</h4>
+    <div className="flex items-center justify-center mb-4">
+      <Clock className="h-6 w-6 text-a1green mr-2" />
+      <span className="font-semibold">Garantia de 30 Dias Sem Risco</span>
+    </div>
+    <p className="text-gray-600 text-center max-w-2xl mx-auto mb-4">
+      Se você não sentir na pele que isso é uma verdadeira proteção para você e sua família, receba seu dinheiro de volta imediatamente, sem perguntas ou enrolação.
+    </p>
+    <p className="text-gray-600 text-center font-medium max-w-2xl mx-auto mb-2">
+      Sem burocracia. Sem taxa. Sem letras miúdas.
+    </p>
+    <p className="text-gray-700 text-center font-bold max-w-2xl mx-auto">
+      Você tem tudo a ganhar — e nada a perder.
+    </p>
+  </div>
+</div>
       </div>
     </section>
   );
