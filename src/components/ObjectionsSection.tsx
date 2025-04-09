@@ -73,7 +73,7 @@ const PricingSection = () => {
           <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-lg border-2 border-gray-200">
             <div className="bg-blue-100 p-4 text-center">
               <h3 className="font-bold text-gray-800">Plano Mensal</h3>
-              <p className="font-bold text-white">1 mês de atendimento</p>
+              <p className="font-bold text-gray-800">1 mês de atendimento</p>
             </div>
             
             <div className="p-6 flex flex-col items-center">
@@ -167,7 +167,7 @@ const PricingSection = () => {
           <div className="flex-1 bg-white rounded-xl overflow-hidden shadow-lg border-2 border-gray-200">
             <div className="bg-blue-100 p-4 text-center">
               <h3 className="font-bold text-gray-800">Boa Oferta</h3>
-              <p className="font-bold text-white">3 meses de atendimento</p>
+              <p className="font-bold text-gray-800">3 meses de atendimento</p>
             </div>
             
             <div className="p-6 flex flex-col items-center">
