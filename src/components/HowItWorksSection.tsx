@@ -25,7 +25,7 @@ const HowItWorksSection = () => {
   const steps = [
     {
       icon: <Smartphone className="h-10 w-10 text-a1blue" />,
-      title: "Assine a  Life em 2 minutos",
+      title: "Assine a A 1 Life em 2 minutos",
       description: "Processo rápido e descomplicado, sem burocracia."
     },
     {
@@ -76,7 +76,7 @@ const HowItWorksSection = () => {
           <div className="md:w-1/2 mb-6 md:mb-0 md:mr-8">
             <img 
               src="uploads/mockup.webp" 
-              alt="App  Life na tela do celular" 
+              alt="App A 1 Life na tela do celular" 
               className="rounded-lg shadow-md"
             />
           </div>
@@ -85,7 +85,7 @@ const HowItWorksSection = () => {
               Interface simples, visual e amigável
             </h3>
             <p className="text-gray-600 mb-6">
-              O app  Life foi projetado para ser intuitivo e fácil de usar, mesmo em momentos de preocupação. Com poucos toques, você tem acesso a médicos qualificados prontos para te atender.
+              O app A 1 Life foi projetado para ser intuitivo e fácil de usar, mesmo em momentos de preocupação. Com poucos toques, você tem acesso a médicos qualificados prontos para te atender.
             </p>
             <ul className="space-y-3 text-gray-600">
               <li className="flex items-start">
