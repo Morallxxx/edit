@@ -35,7 +35,7 @@ const HowItWorksSection = () => {
     },
     {
       icon: <FileText className="h-10 w-10 text-a1blue" />,
-      title: "Tenha acesso a médicos 24h",
+      title: "Tenha acesso imediato a médicos 24h",
       description: "Consultas por videochamada com médicos reais a qualquer hora."
     },
     {
