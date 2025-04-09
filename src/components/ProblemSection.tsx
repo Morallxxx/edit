@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { ShieldX, Clock, User, AlertTriangle } from "lucide-react";
 
@@ -23,11 +22,11 @@ const ProblemSection = () => {
   }, []);
   
   return (
-<section id="problem-section" className="py-20 bg-gray-50">
-  <div className="section-container">
-    <h2 className="section-heading text-center">
-      A <span className="text-[#df2026] font-bold">Síndrome</span> da Porta Fechada™
-    </h2>
+    <section id="problem-section" className="py-20 bg-gray-50">
+      <div className="section-container">
+        <h2 className="section-heading text-center">
+          A <span className="text-[#df2026] font-bold">Síndrome</span> da Porta Fechada™
+        </h2>
         <p className="section-subheading text-center">
           Você conhece bem essa história…
         </p>
@@ -68,25 +67,26 @@ const ProblemSection = () => {
             </div>
           ))}
         </div>        
-<div className={`mt-16 bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-  <h3 className="text-2xl font-bold text-a1blue mb-4">A OPORTUNIDADE</h3>
-  <span className="block mt-2 font-medium">
-    Sem sair de casa.
-  </span>
-  <span className="block mt-1 font-medium">
-    Sem pegar ônibus.
-  </span>
-  <span className="block mt-1 font-medium">
-    Sem arrastar criança no colo.
-  </span>
-  <span className="block mt-1 font-medium">
-    Sem depender de sorte.
-  </span>
-  <div className="mt-8">
-    <a href="#assinar" className="cta-button">
-      QUERO ESTA FACILIDADE
-    </a>
-  </div>
+        <div className={`mt-16 bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
+          <h3 className="text-2xl font-bold text-a1blue mb-4">A OPORTUNIDADE</h3>
+          <span className="block mt-2 font-medium">
+            Sem sair de casa.
+          </span>
+          <span className="block mt-1 font-medium">
+            Sem pegar ônibus.
+          </span>
+          <span className="block mt-1 font-medium">
+            Sem arrastar criança no colo.
+          </span>
+          <span className="block mt-1 font-medium">
+            Sem depender de sorte.
+          </span>
+          <div className="mt-8">
+            <a href="#assinar" className="cta-button">
+              QUERO ESTA FACILIDADE
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
