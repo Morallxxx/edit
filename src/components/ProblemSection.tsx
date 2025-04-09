@@ -67,29 +67,28 @@ const ProblemSection = () => {
             </div>
           ))}
         </div>        
-<div className={`mt-16 bg-gradient-to-r from-blue-100 to-blue-50 p-8 rounded-xl shadow-2xl max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-  <h3 className="text-3xl font-extrabold text-blue-800 mb-6">A OPORTUNIDADE</h3>
+<div className={`mt-16 bg-gradient-to-r from-green-50 to-white p-8 rounded-xl shadow-2xl max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
+  <h3 className="text-3xl font-extrabold text-[#4cb050] mb-6">A OPORTUNIDADE</h3>
   <div className="flex flex-col items-center space-y-4">
-    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+    <span className="block text-lg font-medium text-[#4cb050] bg-green-100 px-5 py-2 rounded-full shadow-md">
       Sem sair de casa.
     </span>
-    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+    <span className="block text-lg font-medium text-[#4cb050] bg-green-100 px-5 py-2 rounded-full shadow-md">
       Sem pegar ônibus.
     </span>
-    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+    <span className="block text-lg font-medium text-[#4cb050] bg-green-100 px-5 py-2 rounded-full shadow-md">
       Sem arrastar criança no colo.
     </span>
-    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+    <span className="block text-lg font-medium text-[#4cb050] bg-green-100 px-5 py-2 rounded-full shadow-md">
       Sem depender de sorte.
     </span>
   </div>
   <div className="mt-8">
-    <a href="#assinar" className="cta-button inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+    <a href="#assinar" className="cta-button inline-block px-8 py-4 bg-[#4cb050] text-white font-bold rounded-lg shadow-lg hover:bg-green-600 transition-transform transform hover:scale-105">
       QUERO ESTA FACILIDADE
     </a>
   </div>
 </div>
-      </div>
     </section>
   );
 };
