@@ -67,26 +67,28 @@ const ProblemSection = () => {
             </div>
           ))}
         </div>        
-        <div className={`mt-16 bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
-          <h3 className="text-2xl font-bold text-a1blue mb-4">A OPORTUNIDADE</h3>
-          <span className="block mt-2 font-medium">
-            Sem sair de casa.
-          </span>
-          <span className="block mt-1 font-medium">
-            Sem pegar ônibus.
-          </span>
-          <span className="block mt-1 font-medium">
-            Sem arrastar criança no colo.
-          </span>
-          <span className="block mt-1 font-medium">
-            Sem depender de sorte.
-          </span>
-          <div className="mt-8">
-            <a href="#assinar" className="cta-button">
-              QUERO ESTA FACILIDADE
-            </a>
-          </div>
-        </div>
+<div className={`mt-16 bg-gradient-to-r from-blue-100 to-blue-50 p-8 rounded-xl shadow-2xl max-w-3xl mx-auto text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
+  <h3 className="text-3xl font-extrabold text-blue-800 mb-6">A OPORTUNIDADE</h3>
+  <div className="flex flex-col items-center space-y-4">
+    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+      Sem sair de casa.
+    </span>
+    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+      Sem pegar ônibus.
+    </span>
+    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+      Sem arrastar criança no colo.
+    </span>
+    <span className="block text-lg font-medium text-blue-700 bg-blue-200 px-4 py-2 rounded-full shadow-md">
+      Sem depender de sorte.
+    </span>
+  </div>
+  <div className="mt-8">
+    <a href="#assinar" className="cta-button inline-block px-8 py-4 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105">
+      QUERO ESTA FACILIDADE
+    </a>
+  </div>
+</div>
       </div>
     </section>
   );
