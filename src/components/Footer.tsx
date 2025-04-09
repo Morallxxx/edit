@@ -85,7 +85,7 @@ const Footer = () => {
     href="https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf"
     target="_blank"
     rel="noopener noreferrer"
-    className="text-[#013e7d] underline hover:text-blue-800 transition"
+    className="text-[#013e7d] underline hover:text-white-800 transition"
   >
     Telemedicina Resolução CFM nº 2.299/21
   </a>
