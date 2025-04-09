@@ -95,9 +95,6 @@ const FutureSection = () => {
           <p className="mt-4 text-gray-600 italic">
             "Você não precisa decidir agora. Mas só de saber que isso existe… já alivia o coração."
           </p>
-          <a href="https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf" className="text-blue-500 underline mt-2 block">
-            Link da Resolução Federal de Medicina
-          </a>
         </div>
       </div>
     </section>
