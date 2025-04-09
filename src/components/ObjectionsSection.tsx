@@ -210,7 +210,7 @@ const PricingSection = () => {
     <h4 className="text-2xl font-bold text-green-700 text-center mb-4">
       🎁 BÔNUS EXCLUSIVO DE BOAS-VINDAS
     </h4>
-    <p className="text-center text-red-600 font-medium text-sm mb-6">
+    <p className="text-center text-red-600 font-bold text-sm mb-6">
       (por tempo limitado)
     </p>
     
