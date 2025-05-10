@@ -102,7 +102,7 @@ const HeroSection = () => {
           <div className="relative">
             <div className="bg-white p-6 rounded-xl shadow-lg">
               <img 
-                src="uploads/mae-carinhosa-medindo-a-temperatura-para-seu-filho-doente-deitado-na-cama-a-noite-doenca-infantil-45.jpg" 
+                src="mae-carinhosa-medindo-a-temperat.jpg" 
                 alt="Mãe medindo a temperatura de seu filho doente" 
                 className="rounded-lg w-full h-auto object-cover"
                 fetchpriority="high"
