@@ -56,8 +56,8 @@ const SolutionSection = () => {
               },
               {
                 icon: <HeartPulse className="h-12 w-12 text-a1green" />,
-                title: "Receitas digitais válidas em todo Brasil",
-                description: "Receitas com assinatura digital oficial, aceitas em todas as farmácias."
+                title: "Atendimento humanizado e respeitoso",
+                description: "Médicos que realmente escutam e se importam com você e sua família.."
               }
             ].map((item, index) => (
               <div 
