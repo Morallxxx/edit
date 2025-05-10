@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A1 Life - Atendimento médico 24h no seu celular</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    
-    <!-- Carregamento não bloqueante do CSS -->
-    <link rel="stylesheet" href="/assets/index-QagFoGkA.css" media="print" onload="this.media='all'">
-    
-    <!-- Carregamento não bloqueante da fonte -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" 
-          rel="stylesheet" media="print" onload="this.media='all'">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script defer src="https://unpkg.com/lucide@latest"></script>
-    <script type="module" src="/src/main.tsx"></script>
-    <script defer src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A1 Life - Atendimento médico 24h no seu celular</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+</head>
+<body>
+  <div id="root"></div>
+  
+  <!-- Scripts carregados de forma não bloqueante -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script src="/src/main.tsx" type="module"></script>
+  <script src="script.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  
+  <!-- CSS e fontes movidos para o final (não bloqueante) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/index-QagFoGkA.css">
+</body>
 </html>
