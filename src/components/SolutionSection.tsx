@@ -41,16 +41,6 @@ const SolutionSection = () => {
                 description: "Atendimento médico quando você precisar, sem espera, sem deslocamento."
               },
               {
-                icon: <HeartPulse className="h-12 w-12 text-a1green" />,
-                title: "Consultas ilimitadas com clínico e pediatra",
-                description: "Quantas consultas você precisar, sem limite ou cobrança adicional."
-              },
-              {
-                icon: <Sparkles className="h-12 w-12 text-a1green" />,
-                title: "17 especialidades inclusas",
-                description: "Acesso a diversas especialidades médicas, todas no seu plano."
-              },
-              {
                 icon: <CheckCircle className="h-12 w-12 text-a1green" />,
                 title: "Atendimento humanizado e respeitoso",
                 description: "Médicos que realmente escutam e se importam com você e sua família."
