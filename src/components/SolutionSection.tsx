@@ -51,8 +51,8 @@ const SolutionSection = () => {
               },
               {
                 icon: <CheckCircle className="h-12 w-12 text-a1green" />,
-                title: "Atendimento humanizado e respeitoso",
-                description: "Médicos que realmente escutam e se importam com você e sua família."
+                title: "Consultas ilimitadas com clínico e pediatra",
+                description: "Quantas consultas você precisar, sem limite ou cobrança adicional."
               },
               {
                 icon: <HeartPulse className="h-12 w-12 text-a1green" />,
