@@ -35,7 +35,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="https://i.ibb.co/jkTBXpCZ/logo-1.png" 
+            src="uploads/logo.webp" 
             alt="Life Logo" 
             className={`${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-16'}`}
             width={isScrolled ? "auto" : "auto"}
