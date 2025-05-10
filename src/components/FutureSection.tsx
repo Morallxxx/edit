@@ -42,7 +42,7 @@ const FutureSection = () => {
               
               <div className="md:w-1/2">
                 <p className="text-xl text-gray-700 mb-6">
-                  <span className="font-semibold">Seu filho tossindo.</span>
+                  <span className="font-semibold">Seu filho vomitando.</span>
                   <br />
                   <span className="font-semibold">Você com o coração apertado.</span>
                 </p>
