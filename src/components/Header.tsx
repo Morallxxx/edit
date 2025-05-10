@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from "lucide-react";
 import { useIsMobile } from '../hooks/use-mobile';
@@ -39,7 +38,7 @@ const Header = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
           <img 
-            src="uploads/logo.webp" 
+            src="https://i.ibb.co/jkTBXpCZ/logo-1.png" 
             alt=" Life Logo" 
             className={`transition-all duration-500 ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-16'}`}
           />
