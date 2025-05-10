@@ -82,8 +82,8 @@ const HeroSection: React.FC = () => {
           <div className="relative">
             <div className="bg-white p-6 rounded-xl shadow-xl transform transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
               <img 
-                src="uploads/maeefilho.jpg" 
-                alt="Mãe sorrindo com celular e criança no colo" 
+                src="https://i.ibb.co/GQzV1GHc/mae-carinhosa-medindo-a-temperatura-para-seu-filho-doente-deitado-na-cama-a-noite-doenca-infantil-45.jpg" 
+                alt="Mãe medindo a temperatura de seu filho doente" 
                 className="rounded-lg w-full h-auto object-cover"
                 loading="eager"
               />
