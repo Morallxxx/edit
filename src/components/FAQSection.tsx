@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 
 const FAQSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState(0); // Removida a anotação TypeScript
   
   useEffect(() => {
     const handleScroll = () => {
@@ -41,14 +40,14 @@ const FAQSection = () => {
       answer: "Sim, temos equipe de atendimento pronta pra te ajudar."
     },
     {
-  question: "É atendimento de verdade ou robô?",
-  answer: "Nada de robôs. 👉 Todos os atendimentos são feitos por médicos humanos, com nome, CRM e especialidade exibidos na tela."
-},
+      question: "É atendimento de verdade ou robô?",
+      answer: "Nada de robôs. 👉 Todos os atendimentos são feitos por médicos humanos, com nome, CRM e especialidade exibidos na tela."
+    },
     {
       question: "Posso incluir meu filho ou parceiro?",
       answer: "Sim! Oferecemos planos familiares. Fale com a equipe pelo botão."
     },
- {
+    {
       question: "Mas é confiável?",
       answer: (
         <>
@@ -58,11 +57,6 @@ const FAQSection = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="text-a1blue hover:underline inline-flex items-center"
-            onClick={(e) => {
-              // Garantir que o link abra em uma nova aba
-              window.open("https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf", "_blank", "noopener,noreferrer");
-              e.preventDefault(); // Previne o comportamento padrão do link
-            }}
           >
             Resolução CFM nº 2.299/21
             <ExternalLink className="h-3.5 w-3.5 ml-0.5" />
@@ -70,7 +64,7 @@ const FAQSection = () => {
           . Nosso índice de satisfação é de 4.9/5.
         </>
       )
-},
+    },
     {
       question: "E se for grave?",
       answer: "Orientamos, direcionamos. 74% dos casos evitam emergências com nosso primeiro atendimento. Quando a situação exige atendimento presencial, nossos médicos orientam sobre o melhor local para buscar ajuda."
@@ -110,7 +104,7 @@ const FAQSection = () => {
                   openIndex === index ? 'max-h-96 py-4' : 'max-h-0 py-0'
                 }`}
               >
-                <p className="text-gray-600">{faq.answer}</p>
+                <div className="text-gray-600">{faq.answer}</div>
               </div>
             </div>
           ))}
