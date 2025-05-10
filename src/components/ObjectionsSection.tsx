@@ -291,7 +291,7 @@ const PricingSection = () => {
       <p className="text-xs mt-1">Min</p>
     </div>
     <span className="text-xl font-bold text-gray-700">:</span>
-    <div className="bg-black text-white px-3 py-2 rounded-lg">
+    <div className="bg-red-600 text-white px-3 py-2 rounded-lg">
       <span className="text-xl font-bold">{String(countdown.seconds).padStart(2, '0')}</span>
       <p className="text-xs mt-1">Seg</p>
     </div>
