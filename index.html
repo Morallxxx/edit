@@ -4,26 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A1 Life - Atendimento médico 24h no seu celular</title>
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     
-    <!-- Carregamento Crítico CSS (extrato apenas do CSS necessário para acima da dobra) -->
-    <style>
-      /* Estilos críticos extraídos do index-QagFoGkA.css - apenas o suficiente para o primeiro viewport */
-      /* Inclua aqui cerca de 10-15KB dos estilos mais importantes para o primeiro render */
-      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
-      /* Adicione outros estilos críticos conforme necessário */
-    </style>
-    
-    <!-- Carregamento não-bloqueante do CSS principal -->
+    <!-- Carregamento não bloqueante do CSS -->
     <link rel="stylesheet" href="/assets/index-QagFoGkA.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/index-QagFoGkA.css"></noscript>
     
-    <!-- Preload da fonte crítica da Montserrat (apenas a mais usada/importante) -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw5aXx-p7K4KLg.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <!-- Carregamento assíncrono das fontes -->
+    <!-- Carregamento não bloqueante da fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" 
@@ -31,32 +17,8 @@
   </head>
   <body>
     <div id="root"></div>
-    
-    <!-- Carregamento diferido dos scripts -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="/src/main.tsx"></script>
-    
-    <!-- Substituir script.js por carregamento assíncrono -->
-    <script async src="script.js"></script>
-    
-    <!-- Carregamento extremamente otimizado do Lucide -->
-    <script>
-      // Carregamento sob demanda apenas dos ícones necessários
-      window.addEventListener('DOMContentLoaded', () => {
-        const script = document.createElement('script');
-        script.src = 'https://unpkg.com/lucide@0.274.0/dist/umd/lucide.min.js';
-        script.async = true;
-        script.onload = () => {
-          if (typeof lucide !== 'undefined') {
-            lucide.createIcons({
-              // Restrinja apenas aos ícones que você realmente usa
-              icons: ['check-circle', 'clock', 'arrow-right', 'phone']
-            });
-          }
-        };
-        document.body.appendChild(script);
-      });
-    </script>
-    
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>
