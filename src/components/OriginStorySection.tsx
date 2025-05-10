@@ -1,13 +1,52 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Shield, Award, FileCheck } from 'lucide-react';
 
 const TestimonialsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const totalDepoimentos = 7;
   
-  // Caminho das imagens de depoimentos
-  const depoimentos = Array.from({ length: totalDepoimentos }, (_, i) => `/uploads/depoimento${i + 1}.jpeg`);
+  // Dados dos depoimentos
+  const testimonials = [
+    {
+      id: 1,
+      image: "https://i.ibb.co/MynQbHQT/images-2.jpg",
+      quote: "Minha mãe tem Alzheimer. Já fiquei 7 horas esperando no hospital. Com esse app, resolvi uma crise em 10 minutos. Só quem cuida entende o valor disso.",
+      author: "Henrique Dias",
+      age: "39 anos",
+      location: "Curitiba/PR"
+    },
+    {
+      id: 2,
+      image: "https://i.ibb.co/20TTCgnC/download-2.jpg",
+      quote: "Eu me sentia invisível no SUS. Aqui, me chamaram pelo nome e falaram com calma. Pela primeira vez, senti que minha dor era ouvida.",
+      author: "Luciene Rocha",
+      age: "46 anos",
+      location: "Manaus/AM"
+    },
+    {
+      id: 3,
+      image: "https://i.ibb.co/XZxmGTWC/images.jpg",
+      quote: "Madrugada. Meu filho com falta de ar. Em 4 minutos, o clínico me atendeu, acalmou e orientou. A1 Life salvou a gente naquela noite.",
+      author: "Rafael Martins",
+      age: "41 anos",
+      location: "Brasília/DF"
+    },
+    {
+      id: 4,
+      image: "https://i.ibb.co/C5dcyhFP/761aec5712ec01c7140ec60eeb57adf9.jpg",
+      quote: "Achei que era mais um desses apps frios. Mas o médico escutou cada detalhe, até perguntou como meu filho tava se sentindo hoje. Nunca fui tratada assim nem no particular.",
+      author: "Juliana Tavares",
+      age: "37 anos",
+      location: "Santos/SP"
+    },
+    {
+      id: 5,
+      image: "https://i.ibb.co/0ymT3Ljs/images-1.jpg",
+      quote: "Minha filha vomitando, eu chorando no banheiro. Liguei pro app, e uma médica me atendeu em 3 minutos. Aquilo não foi uma consulta. Foi um abraço.",
+      author: "Patrícia Nunes",
+      age: "30 anos",
+      location: "Salvador/BA"
+    }
+  ];
   
   useEffect(() => {
     const handleScroll = () => {
@@ -26,83 +65,46 @@ const TestimonialsSection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  // Efeito de animação infinita (rolagem contínua)
-  useEffect(() => {
-    if (!isVisible || !scrollContainerRef.current) return;
-    
-    const scrollContainer = scrollContainerRef.current;
-    const totalWidth = scrollContainer.scrollWidth;
-    const visibleWidth = scrollContainer.clientWidth;
-    let currentPosition = 0;
-    
-    const animateScroll = () => {
-      currentPosition -= 0.3; // Velocidade de rolagem reduzida
-      
-      // Quando elementos saem completamente pela esquerda, reposiciona para direita
-      if (Math.abs(currentPosition) >= totalWidth / 2) {
-        currentPosition = 0;
-      }
-      
-      scrollContainer.style.transform = `translateX(${currentPosition}px)`;
-      requestAnimationFrame(animateScroll);
-    };
-    
-    const animation = requestAnimationFrame(animateScroll);
-    
-    return () => {
-      cancelAnimationFrame(animation);
-    };
-  }, [isVisible]);
-  
   return (
-    <section id="depoimentos" className="py-20 bg-white text-gray-800 overflow-hidden">
+    <section id="depoimentos" className="py-20 bg-white text-gray-800">
       <div className="section-container">
         <h2 className="section-heading text-center mb-12 text-gray-900">
           Essa é a <span className="text-[#013e7d]">reação de quem já testou</span> a <span className="text-gray-900 font-bold">A1 Life:</span>
         </h2>
         
-        <div className={`relative overflow-hidden ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-          {/* Container de rolagem infinita */}
-          <div className="max-w-full mx-auto" style={{ overflow: 'hidden' }}>
-            <div 
-              ref={scrollContainerRef} 
-              className="flex"
-              style={{ width: `${totalDepoimentos * 600}px` }} // Largura total para caber todos os depoimentos duplicados
-            >
-              {/* Primeira cópia dos depoimentos */}
-              {depoimentos.map((src, index) => (
-                <div 
-                  key={`first-${index}`} 
-                  className="flex-shrink-0 px-2"
-                  style={{ width: '300px' }}
-                >
-                  <div className="bg-gray-100 rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
+        <div className={`${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          {/* Grid de depoimentos em cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div 
+                key={testimonial.id}
+                className={`bg-white rounded-xl p-6 shadow-lg border-l-4 border-[#4cb050] transform transition-all duration-500 hover:shadow-xl ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
+                style={{ animationDelay: `${0.2 * index}s` }}
+              >
+                <div className="flex flex-col items-center">
+                  {/* Foto arredondada */}
+                  <div className="w-20 h-20 rounded-full overflow-hidden mb-4 border-2 border-[#4cb050] shadow-md">
                     <img 
-                      src={src} 
-                      alt={`Depoimento de cliente ${index + 1}`}
-                      className="w-full h-auto object-cover rounded-lg"
+                      src={testimonial.image} 
+                      alt={`Foto de ${testimonial.author}`}
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                </div>
-              ))}
-              
-              {/* Segunda cópia dos depoimentos para rolagem infinita */}
-              {depoimentos.map((src, index) => (
-                <div 
-                  key={`second-${index}`} 
-                  className="flex-shrink-0 px-2"
-                  style={{ width: '300px' }}
-                >
-                  <div className="bg-gray-100 rounded-xl overflow-hidden shadow-lg p-1 transform hover:scale-105 transition-transform duration-300">
-                    <img 
-                      src={src} 
-                      alt={`Depoimento de cliente ${index + 1}`}
-                      className="w-full h-auto object-cover rounded-lg"
-                    />
+                  
+                  {/* Citação */}
+                  <div className="text-center mb-4">
+                    <span className="text-[#4cb050] text-xl">📍</span>
+                    <p className="text-gray-700 italic">"{testimonial.quote}"</p>
+                  </div>
+                  
+                  {/* Informações da pessoa */}
+                  <div className="mt-auto text-center">
+                    <p className="font-bold text-[#013e7d]">{testimonial.author}</p>
+                    <p className="text-sm text-gray-500">{testimonial.age} – {testimonial.location}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
           
           <div className="text-center mt-12">
