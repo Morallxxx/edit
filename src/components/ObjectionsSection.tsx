@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CheckCircle, Clock, AlertTriangle } from "lucide-react";
+import { CheckCircle, Clock, AlertTriangle, Star, Shield, Users, Gift } from "lucide-react";
 
 const PricingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -205,49 +205,78 @@ const PricingSection = () => {
             </div>
           </div>
         </div>
+
+        {/* NOVA seção de bônus */}
         <div className={`max-w-4xl mx-auto mt-12 mb-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.3s' }}>
-  <div className="bg-green-50 p-6 rounded-xl border-2 border-green-200">
-    <h4 className="text-2xl font-bold text-green-700 text-center mb-4">
-      🎁 BÔNUS EXCLUSIVO DE BOAS-VINDAS
-    </h4>
-    <p className="text-center text-red-600 font-bold text-sm mb-6">
-      (por tempo limitado)
-    </p>
-    
-    <div className="space-y-5">
-      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
-        <div className="flex-shrink-0 text-green-600 font-bold mr-3">
-          ✅
+          <div className="bg-green-50 p-6 rounded-xl border-2 border-green-200">
+            <h4 className="text-2xl font-bold text-green-700 text-center mb-2">
+              🎁 BÔNUS EXCLUSIVO DE BOAS-VINDAS
+            </h4>
+            <p className="text-center text-red-600 font-bold text-sm mb-6">
+              (por tempo limitado)
+            </p>
+            
+            <div className="space-y-6">
+              {/* Bônus #1 */}
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <div className="flex items-start mb-2">
+                  <div className="flex-shrink-0 text-red-500 mr-3">
+                    <Star className="h-6 w-6" />
+                  </div>
+                  <h5 className="font-bold text-lg text-gray-800">🔥 Bônus #1 – Passaporte de Prioridade Médica™</h5>
+                </div>
+                <div className="ml-9">
+                  <p className="text-gray-700 mb-2"><strong>Chegue com tudo:</strong> 3 consultas agendadas com especialistas de 15 áreas, já no 1º mês. Gineco, nutrição, psicologia, cardiologia... <strong>sem fila, sem burocracia.</strong></p>
+                  <p className="text-gray-700 italic">É sua estreia no cuidado — do jeito que você merecia desde o começo.</p>
+                </div>
+              </div>
+              
+              {/* Bônus #2 */}
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <div className="flex items-start mb-2">
+                  <div className="flex-shrink-0 text-blue-500 mr-3">
+                    <Shield className="h-6 w-6" />
+                  </div>
+                  <h5 className="font-bold text-lg text-gray-800">🛡️ Bônus #2 – Escudo Madrugada™</h5>
+                </div>
+                <div className="ml-9">
+                  <p className="text-gray-700 mb-2">Entre 00h e 6h, você é <strong>atendida com prioridade</strong>, sem disputa de fila. Seu filho teve febre de madrugada? Você fala direto com o médico, antes de todo mundo.</p>
+                  <p className="text-gray-700 italic">Quando todo mundo dorme, sua urgência não fica sozinha.</p>
+                </div>
+              </div>
+              
+              {/* Bônus #3 */}
+              <div className="bg-white p-5 rounded-lg shadow-sm">
+                <div className="flex items-start mb-2">
+                  <div className="flex-shrink-0 text-purple-500 mr-3">
+                    <Users className="h-6 w-6" />
+                  </div>
+                  <h5 className="font-bold text-lg text-gray-800">👩‍👧 Bônus #3 – Laço de Vida™</h5>
+                </div>
+                <div className="ml-9">
+                  <p className="text-gray-700 mb-2">Inclua <strong>mais 1 pessoa da família</strong> sem custo no primeiro mês. Mãe, filho, vó... <strong>quem você carrega no coração entra junto com você.</strong></p>
+                  <p className="text-gray-700 italic">Porque cuidado de verdade nunca vem sozinho.</p>
+                </div>
+              </div>
+              
+              {/* Bônus Secreto */}
+              <div className="bg-gray-900 p-5 rounded-lg shadow-md text-white">
+                <div className="flex items-start mb-2">
+                  <div className="flex-shrink-0 text-yellow-400 mr-3">
+                    <Gift className="h-6 w-6" />
+                  </div>
+                  <h5 className="font-bold text-lg">🎁 Bônus Secreto™ – Só pra quem Entra Agora</h5>
+                </div>
+                <div className="ml-9">
+                  <p className="mb-2">Tem um presente escondido nessa oferta. Mas <strong>ninguém fala sobre ele</strong>. Nem nos anúncios. Nem na página.</p>
+                  <p className="mb-2">📦 <strong>Só quem entra descobre.</strong> E quando descobre… entende por que tanta gente <strong>fica pra sempre.</strong></p>
+                  <p className="text-yellow-300">O que posso te dizer é: <strong>Só esse bônus já vale o valor da assinatura.</strong></p>
+                  <p className="mt-2">💡 Não é pra todo mundo. É pra quem age rápido. É pra quem <strong>entra hoje.</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <p className="font-bold text-gray-800">Serviço de Assistência Funerária Zelo</p>
-          <p className="text-gray-600">Sim — até nos piores dias, você não estará sozinha(o).</p>
-        </div>
-      </div>
-      
-      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
-        <div className="flex-shrink-0 text-green-600 font-bold mr-3">
-          ✅
-        </div>
-        <div>
-          <p className="font-bold text-gray-800">Acesso Imediato ao App e à Central Médica 24h</p>
-          <p className="text-gray-600">Consulta em minutos, direto do seu celular.</p>
-        </div>
-      </div>
-      
-      <div className="flex items-start bg-white p-4 rounded-lg shadow-sm">
-        <div className="flex-shrink-0 text-green-600 font-bold mr-3">
-          ✅
-        </div>
-        <div>
-          <p className="font-bold text-gray-800">Garantia Total de Satisfação por 30 Dias</p>
-          <p className="text-gray-600">Usou, não gostou? Cancelou. E pronto.</p>
-          <p className="text-gray-600">Sem dor de cabeça. Sem estresse.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
       
         {/* Seção de garantia */}
         <div className={`max-w-4xl mx-auto mt-12 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.5s' }}>
