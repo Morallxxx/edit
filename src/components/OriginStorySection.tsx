@@ -181,10 +181,10 @@ const TestimonialsSection = () => {
                 </div>
                 <div>
                   <h4 className="text-base font-bold text-gray-900 mb-1">
-                    <span className="text-[#4cb050]">🖋️</span> Receituário com Assinatura Digital
+                    <span className="text-[#4cb050]">🖋️</span> Receituário com Assinatura Digital Oficial
                   </h4>
                   <p className="text-sm text-gray-600">
-                    Todas as prescrições têm validação jurídica, exatamente como um receituário físico — com assinatura digital reconhecida em todo o país.
+                    Todas as prescrições têm validação jurídica, exatamente como um receituário físico — com assinatura digital médica reconhecida e aceita em todo o país.
                   </p>
                 </div>
               </div>
