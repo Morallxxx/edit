@@ -286,7 +286,7 @@ const PricingSection = () => {
   
   <div className="text-sm text-gray-700 mb-2">Esta condição especial expira em:</div>
   <div className="flex justify-center items-center gap-4">
-    <div className="bg-black text-white px-3 py-2 rounded-lg">
+    <div className="bg-red-600 text-white px-3 py-2 rounded-lg">
       <span className="text-xl font-bold">{String(countdown.minutes).padStart(2, '0')}</span>
       <p className="text-xs mt-1">Min</p>
     </div>
