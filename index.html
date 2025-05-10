@@ -1,35 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A1 Life - Atendimento médico 24h no seu celular</title>
-    
-    <!-- Preconnect para fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Preload CSS críticos -->
-    <link rel="preload" href="styles.css" as="style">
-    
-    <!-- Carregamento não-bloqueante do CSS -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
-    
-    <!-- Carregamento não-bloqueante das fontes -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" 
-          rel="stylesheet" media="print" onload="this.media='all'">
-    
-    <!-- Troque pela versão específica menor em vez de "latest" -->
-    <script defer src="https://unpkg.com/lucide@0.274.0/dist/umd/lucide.min.js"></script>
+    <title> Life - Atendimento médico 24h no seu celular</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script> 
   </head>
   <body>
     <div id="root"></div>
-    
-    <!-- Scripts com defer para não bloquear -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
-    <script defer src="script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
