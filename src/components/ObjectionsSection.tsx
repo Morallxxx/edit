@@ -97,7 +97,7 @@ const PricingSection = () => {
                 </div>
               </div>
               
-              <a href="#buy" className="w-full bg-yellow-400 hover:bg-yellow-500 text-center py-3 rounded font-bold text-gray-800 mb-4">
+              <a href="https://pay.kiwify.com.br/vkfzEPb" className="w-full bg-yellow-400 hover:bg-yellow-500 text-center py-3 rounded font-bold text-gray-800 mb-4">
                 ASSINAR AGORA
               </a>
               
@@ -145,7 +145,7 @@ const PricingSection = () => {
                 </div>
               </div>
               
-              <a href="#buy" className="w-full bg-yellow-400 hover:bg-yellow-500 text-center py-3 rounded font-bold text-gray-800 mb-4">
+              <a href="https://pay.kiwify.com.br/AMcxAeQ" className="w-full bg-yellow-400 hover:bg-yellow-500 text-center py-3 rounded font-bold text-gray-800 mb-4">
                 ASSINAR AGORA
               </a>
               
@@ -189,7 +189,7 @@ const PricingSection = () => {
                 </div>
               </div>
               
-              <a href="#buy" className="w-full bg-yellow-400 hover:bg-yellow-500 text-center py-3 rounded font-bold text-gray-800 mb-4">
+              <a href="https://pay.kiwify.com.br/EdNxejR" className="w-full bg-yellow-400 hover:bg-yellow-500 text-center py-3 rounded font-bold text-gray-800 mb-4">
                 ASSINAR AGORA
               </a>
               
@@ -274,4 +274,3 @@ const PricingSection = () => {
 };
 
 export default PricingSection;
-
