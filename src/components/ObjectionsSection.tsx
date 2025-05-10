@@ -3,7 +3,7 @@ import { CheckCircle, Clock, AlertTriangle, Star, Shield, Users, Gift } from "lu
 
 const PricingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [countdown, setCountdown] = useState({ hours: 0, minutes: 10, seconds: 0 });
+  const [countdown, setCountdown] = useState({ hours: 0, minutes: 5, seconds: 0 });
   
   useEffect(() => {
     const handleScroll = () => {
@@ -265,7 +265,7 @@ const PricingSection = () => {
                   <div className="flex-shrink-0 text-yellow-400 mr-3">
                     <Gift className="h-6 w-6" />
                   </div>
-                  <h5 className="font-bold text-lg">🎁 Bônus Secreto™ – Só pra quem Entra Agora</h5>
+                  <h5 className="font-bold text-lg">🎁 Bônus Secreto™ – Só pra quem Entrar Agora</h5>
                 </div>
                 <div className="ml-9">
                   <p className="mb-2">Tem um presente escondido nessa oferta. Mas <strong>ninguém fala sobre ele</strong>. Nem nos anúncios. Nem na página.</p>
