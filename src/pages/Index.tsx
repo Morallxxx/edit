@@ -22,9 +22,9 @@ const Index = () => {
       <div className="space-y-0">
         <ProblemSection />
         <SolutionSection />
+        <OriginStorySection />
         <BenefitsSection />
         <ObjectionsSection />
-        <OriginStorySection />
         <TestimonialsSection />
         <HowItWorksSection />
         <FutureSection />
