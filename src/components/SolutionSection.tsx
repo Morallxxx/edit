@@ -149,7 +149,6 @@ const SolutionSection = () => {
                 <h3 className="text-xl font-bold text-gray-800 mb-2">🚨 A A1 Life não é um plano de saúde.</h3>
               </div>
             </div>
-            
             {/* Pronto */}
             <div className={`flex items-start p-6 border-l-4 border-a1green bg-white rounded-r-lg shadow-sm hover:shadow-md transition-all transform ${isPaiVisible ? 'animate-fade-in hover:-translate-y-1' : 'opacity-0'}`} style={{ animationDelay: '0.1s' }}>
               <div className="flex-shrink-0 mr-6">
