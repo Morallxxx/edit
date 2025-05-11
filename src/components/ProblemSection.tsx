@@ -93,11 +93,6 @@ export default function ProblemSection() {
               </li>
             ))}
           </ul>
-
-          {/* Botão CTA */}
-          <button className="mt-4 bg-a1green hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
-            Quero Falar com um Médico Agora
-          </button>
         </div>
 
         {/* Seção Como Funciona */}
@@ -132,11 +127,10 @@ export default function ProblemSection() {
             ))}
           </div>
 
-          {/* Botão CTA abaixo da seção "como funciona" */}
-          <div className="text-center mt-12">
-            <button className="bg-a1green hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
-              Comece Agora Gratuitamente
-            </button>
+          {/* Botão CTA */}
+          <button className="mt-4 bg-a1green hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
+            Quero Falar com um Médico Agora
+          </button>
           </div>
         </section>
       </div>
