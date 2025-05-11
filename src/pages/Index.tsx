@@ -24,9 +24,8 @@ const Index = () => {
         <SolutionSection />
         <OriginStorySection />
         <TestimonialsSection />
-        <ObjectionsSection />
-        <TestimonialsSection />
         <HowItWorksSection />
+        <ObjectionsSection />
         <FutureSection />
         <PricingSection />
         <FAQSection />
