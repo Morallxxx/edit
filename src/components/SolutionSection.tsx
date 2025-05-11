@@ -136,7 +136,7 @@ const SolutionSection = () => {
             PROPOSTA DE VALOR
           </h2>
           <h2 className="section-heading text-center mb-12">
-            <span className="text-gray-400 text-sm font-semibold tracking-wider uppercase block mb-2"></span>
+            <span className="text-gray-280 text-sm font-semibold tracking-wider uppercase block mb-2"></span>
             É o único com o Sistema P.A.I.™ — Pronto. Ativo. Imediato.
           </h2>
           <div className="space-y-8 max-w-4xl mx-auto">
