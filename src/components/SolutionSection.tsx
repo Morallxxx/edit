@@ -129,7 +129,7 @@ const SolutionSection = () => {
           </h2>
           <h2 className="section-heading text-center mb-12">
             <span className="text-gray-280 text-sm font-semibold tracking-wider uppercase block mb-2"></span>
-            É o único com o Sistema P.A.I.™ — Pronto. Ativo. Imediato.
+            🚨 A A1 Life não é um plano de saúde.™ — Pronto. Ativo. Imediato.
           </h2>
           <div className="space-y-8 max-w-4xl mx-auto">
             <div className="flex items-start p-6 border-l-4 border-red-500 bg-white rounded-r-lg shadow-lg">
@@ -137,7 +137,7 @@ const SolutionSection = () => {
                 <AlertTriangle className="h-12 w-12 text-red-500" />
               </div>
               <div className="flex-grow">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">🚨 A A1 Life não é um plano de saúde.</h3>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">É o único com o Sistema P.A.I.™ — Pronto. Ativo. Imediato.</h3>
               </div>
             </div>
 
