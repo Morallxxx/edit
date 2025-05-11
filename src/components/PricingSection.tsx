@@ -1,10 +1,9 @@
-
 import { useState, useEffect } from 'react';
-import { CheckCircle, Clock, ShieldCheck, X, HelpCircle } from "lucide-react";
+import { CheckCircle, Clock, ShieldCheck, X, HelpCircle, Cpu } from "lucide-react";
 
 const ObjectionsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const element = document.getElementById('objecoes');
@@ -15,13 +14,13 @@ const ObjectionsSection = () => {
         }
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check on initial load
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
+
   const objections = [
     {
       objection: "E se eu não usar?",
@@ -46,16 +45,22 @@ const ObjectionsSection = () => {
       answer: "Zero.",
       fact: "Você pode cancelar a qualquer momento, direto pelo app ou WhatsApp, sem perguntas nem letras miúdas.",
       icon: <X className="h-12 w-12 text-a1blue" />
+    },
+    {
+      objection: "É atendimento de verdade ou robô?",
+      answer: "Nada de robôs. 👉 Todos os atendimentos são feitos por médicos humanos, com nome, CRM e especialidade exibidos na tela.",
+      fact: "Mais de 200 mil atendimentos feitos por profissionais reais.",
+      icon: <Cpu className="h-12 w-12 text-a1blue" />
     }
   ];
-  
+
   return (
     <section id="objecoes" className="py-20 bg-gray-50">
       <div className="section-container">
         <h2 className="section-heading text-center">
           Respondendo às Suas Dúvidas
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-8 mt-12">
           {objections.map((item, index) => (
             <div 
@@ -69,9 +74,9 @@ const ObjectionsSection = () => {
                 </div>
                 <h3 className="text-xl font-bold text-a1blue">{item.objection}</h3>
               </div>
-              
+
               <p className="text-gray-600 mb-4">{item.answer}</p>
-              
+
               <div className="flex items-start mt-4 bg-blue-50 p-4 rounded-lg">
                 <CheckCircle className="h-5 w-5 text-a1green mr-2 shrink-0 mt-1" />
                 <p className="text-gray-600">{item.fact}</p>
@@ -79,7 +84,7 @@ const ObjectionsSection = () => {
             </div>
           ))}
         </div>
-        
+
         <div className={`mt-12 text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
           <p className="text-xl text-gray-700 mb-6">
             Está convencido? Não perca mais tempo esperando em filas.
