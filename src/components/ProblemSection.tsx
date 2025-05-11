@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { ShieldX, Clock, User, AlertTriangle } from "lucide-react";
+import { useEffect, useRef, useState } from 'react';
+import { ShieldX, Clock, User, AlertTriangle, CheckCircle, HeartPulse } from "lucide-react";
 
 const PROBLEM_CARDS = [
   {
@@ -33,12 +33,14 @@ const OPPORTUNITY_POINTS = [
 
 export default function ProblemSection() {
   const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
+            setIsVisible(true);
             entry.target.classList.add("opacity-100", "translate-y-0");
           }
         });
@@ -66,7 +68,7 @@ export default function ProblemSection() {
           {PROBLEM_CARDS.map(({ icon: Icon, title, description }, index) => (
             <article
               key={index}
-              className="fade-in opacity-0 translate-y-4 transition-all duration-500 delay-[index*100] ease-out text-center"
+              className="fade-in opacity-0 translate-y-4 transition-all duration-500 ease-out text-center"
             >
               <Icon className="h-10 w-10 text-a1red mb-3 mx-auto" />
               <h3 className="text-lg font-semibold text-[#013e7d] mb-1">{title}</h3>
@@ -74,7 +76,7 @@ export default function ProblemSection() {
             </article>
           ))}
         </div>
-        
+
         {/* Bloco da oportunidade */}
         <div
           className="fade-in mt-8 bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto text-center opacity-0 translate-y-4 transition-all duration-700 delay-500"
@@ -84,14 +86,59 @@ export default function ProblemSection() {
             Imagine poder falar com um médico em até 5 minutos...<br />
             Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-3 mb-6">
             {OPPORTUNITY_POINTS.map((text, i) => (
               <li key={i} className="text-[#013e7d] bg-[#e6eef6] px-4 py-2 rounded-full shadow">
                 {text}
               </li>
             ))}
           </ul>
+
+          {/* Botão CTA */}
+          <button className="mt-4 bg-a1green hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
+            Quero Falar com um Médico Agora
+          </button>
         </div>
+
+        {/* Seção Como Funciona */}
+        <section id="como-funciona" className="py-16 bg-white">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+            {[
+              {
+                icon: <Clock className="h-12 w-12 text-a1green" />,
+                title: "Médicos 24h por dia no seu celular",
+                description: "Atendimento médico quando você precisar, sem espera, sem deslocamento."
+              },
+              {
+                icon: <CheckCircle className="h-12 w-12 text-a1green" />,
+                title: "Consultas ilimitadas com clínico e pediatra",
+                description: "Quantas consultas você precisar, sem limite ou cobrança adicional."
+              },
+              {
+                icon: <HeartPulse className="h-12 w-12 text-a1green" />,
+                title: "Atendimento humanizado e respeitoso",
+                description: "Médicos que realmente escutam e se importam com você e sua família."
+              }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className={`feature-card flex flex-col items-center text-center border-t-4 border-a1green ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
+                style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+              >
+                <div className="mb-4">{item.icon}</div>
+                <h3 className="text-xl font-bold mb-2 text-a1blue">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Botão CTA abaixo da seção "como funciona" */}
+          <div className="text-center mt-12">
+            <button className="bg-a1green hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
+              Comece Agora Gratuitamente
+            </button>
+          </div>
+        </section>
       </div>
     </section>
   );
