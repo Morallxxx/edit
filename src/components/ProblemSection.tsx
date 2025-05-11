@@ -74,23 +74,15 @@ export default function ProblemSection() {
             </article>
           ))}
         </div>
-
-        {/* Texto entre os cards e a oportunidade */}
-        <div className="fade-in mt-16 text-center opacity-0 translate-y-4 transition-all duration-700 delay-400">
-          <p className="text-xl text-[#013e7d] font-medium max-w-xl mx-auto leading-relaxed">
-            Imagine poder falar com um médico em até 5 minutos...<br />
-            Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
-          </p>
-        </div>
-
+        
         {/* Bloco da oportunidade */}
         <div
           className="fade-in mt-8 bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto text-center opacity-0 translate-y-4 transition-all duration-700 delay-500"
         >
           <h3 className="text-2xl font-bold text-[#013e7d] mb-2">A OPORTUNIDADE</h3>
           <p className="text-gray-700 mb-4">
-            O futuro da saúde não é esperar.<br />
-            É ser atendida na hora em que você mais precisa.
+            Imagine poder falar com um médico em até 5 minutos...<br />
+            Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
           </p>
           <ul className="space-y-3">
             {OPPORTUNITY_POINTS.map((text, i) => (
@@ -99,15 +91,6 @@ export default function ProblemSection() {
               </li>
             ))}
           </ul>
-        </div>
-
-        <div className="mt-10 text-center">
-          <a
-            href="#assinar"
-            className="inline-block px-6 py-3 bg-[#013e7d] text-white font-semibold rounded-lg shadow hover:bg-blue-900 transition"
-          >
-            QUERO ESTA FACILIDADE
-          </a>
         </div>
       </div>
     </section>
