@@ -75,20 +75,23 @@ export default function ProblemSection() {
           ))}
         </div>
 
-        {/* TEXTO AQUI - ACIMA DA OPORTUNIDADE */}
-        <div className="fade-in opacity-0 translate-y-4 transition-all duration-700 delay-400 max-w-2xl mx-auto mt-20 mb-10 text-center">
-          <p className="text-xl md:text-2xl font-semibold text-[#013e7d]">
-            Imagine poder falar com um médico em até 5 minutos...
-          </p>
-          <p className="mt-4 text-gray-700">
+        {/* Texto entre os cards e a oportunidade */}
+        <div className="fade-in mt-16 text-center opacity-0 translate-y-4 transition-all duration-700 delay-400">
+          <p className="text-xl text-[#013e7d] font-medium max-w-xl mx-auto leading-relaxed">
+            Imagine poder falar com um médico em até 5 minutos...<br />
             Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
           </p>
         </div>
 
+        {/* Bloco da oportunidade */}
         <div
           className="fade-in mt-8 bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto text-center opacity-0 translate-y-4 transition-all duration-700 delay-500"
         >
-          <h3 className="text-2xl font-bold text-[#013e7d] mb-4">A OPORTUNIDADE</h3>
+          <h3 className="text-2xl font-bold text-[#013e7d] mb-2">A OPORTUNIDADE</h3>
+          <p className="text-gray-700 mb-4">
+            O futuro da saúde não é esperar.<br />
+            É ser atendida na hora em que você mais precisa.
+          </p>
           <ul className="space-y-3">
             {OPPORTUNITY_POINTS.map((text, i) => (
               <li key={i} className="text-[#013e7d] bg-[#e6eef6] px-4 py-2 rounded-full shadow">
