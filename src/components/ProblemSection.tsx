@@ -62,16 +62,6 @@ export default function ProblemSection() {
         </h2>
         <p className="section-subheading text-center">Você conhece bem essa história…</p>
 
-        {/* TEXTO ADICIONADO AGORA ABAIXO DO TÍTULO */}
-        <div className="fade-in opacity-0 translate-y-4 transition-all duration-700 delay-300 max-w-2xl mx-auto mt-10 mb-8 text-center">
-          <p className="text-xl md:text-2xl font-semibold text-[#013e7d]">
-            Imagine poder falar com um médico em até 5 minutos...
-          </p>
-          <p className="mt-4 text-gray-700">
-            Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
-          </p>
-        </div>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {PROBLEM_CARDS.map(({ icon: Icon, title, description }, index) => (
             <article
@@ -85,8 +75,18 @@ export default function ProblemSection() {
           ))}
         </div>
 
+        {/* TEXTO AQUI - ACIMA DA OPORTUNIDADE */}
+        <div className="fade-in opacity-0 translate-y-4 transition-all duration-700 delay-400 max-w-2xl mx-auto mt-20 mb-10 text-center">
+          <p className="text-xl md:text-2xl font-semibold text-[#013e7d]">
+            Imagine poder falar com um médico em até 5 minutos...
+          </p>
+          <p className="mt-4 text-gray-700">
+            Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
+          </p>
+        </div>
+
         <div
-          className="fade-in mt-16 bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto text-center opacity-0 translate-y-4 transition-all duration-700 delay-500"
+          className="fade-in mt-8 bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto text-center opacity-0 translate-y-4 transition-all duration-700 delay-500"
         >
           <h3 className="text-2xl font-bold text-[#013e7d] mb-4">A OPORTUNIDADE</h3>
           <ul className="space-y-3">
