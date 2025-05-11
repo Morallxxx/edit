@@ -32,38 +32,6 @@ const SolutionSection = () => {
 
   return (
     <>
-      <section id="como-funciona" className="py-16 bg-white">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-          {[
-            {
-              icon: <Clock className="h-12 w-12 text-a1green" />,
-              title: "Médicos 24h por dia no seu celular",
-              description: "Atendimento médico quando você precisar, sem espera, sem deslocamento."
-            },
-            {
-              icon: <CheckCircle className="h-12 w-12 text-a1green" />,
-              title: "Consultas ilimitadas com clínico e pediatra",
-              description: "Quantas consultas você precisar, sem limite ou cobrança adicional."
-            },
-            {
-              icon: <HeartPulse className="h-12 w-12 text-a1green" />,
-              title: "Atendimento humanizado e respeitoso",
-              description: "Médicos que realmente escutam e se importam com você e sua família."
-            }
-          ].map((item, index) => (
-            <div
-              key={index}
-              className={`feature-card flex flex-col items-center text-center border-t-4 border-a1green ${isVisible ? 'animate-slide-up' : 'opacity-0'}`}
-              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-            >
-              <div className="mb-4">{item.icon}</div>
-              <h3 className="text-xl font-bold mb-2 text-a1blue">{item.title}</h3>
-              <p className="text-gray-600">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section id="publico-alvo" className="py-16 bg-gray-50">
         <div className="section-container">
           <h2 className="section-heading text-center mb-12">
