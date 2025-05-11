@@ -57,6 +57,17 @@ export default function ProblemSection() {
   return (
     <section ref={sectionRef} id="problem-section" className="py-20 bg-gray-50">
       <div className="section-container">
+
+        {/* TEXTO ADICIONADO ACIMA DA QUALIDADE */}
+        <div className="fade-in opacity-0 translate-y-4 transition-all duration-700 delay-300 max-w-2xl mx-auto mb-10 text-center">
+          <p className="text-xl md:text-2xl font-semibold text-[#013e7d]">
+            Imagine poder falar com um médico em até 5 minutos...
+          </p>
+          <p className="mt-4 text-gray-700">
+            Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
+          </p>
+        </div>
+
         <h2 className="section-heading text-center">
           A <span className="text-[#df2026] font-bold">Síndrome</span> da Porta Fechada™
         </h2>
