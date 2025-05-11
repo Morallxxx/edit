@@ -33,15 +33,6 @@ const SolutionSection = () => {
   return (
     <>
       <section id="como-funciona" className="py-16 bg-white">
-        <div className="section-container">
-          <h2 className="section-heading text-center">
-            Imagine poder falar com um médico em até 5 minutos...
-          </h2>
-          
-          <p className="section-subheading text-center">
-            Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
-          </p>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {[
               {
