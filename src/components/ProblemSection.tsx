@@ -86,7 +86,7 @@ export default function ProblemSection() {
             Imagine poder falar com um médico em até 5 minutos...<br />
             Sem sair de casa. Sem pegar ônibus. Sem arrastar criança no colo. Sem depender de sorte.
           </p>
-          <ul className="space-y-3 mb-6">
+          <ul className="space-y-3 mb-0">
             {OPPORTUNITY_POINTS.map((text, i) => (
               <li key={i} className="text-[#013e7d] bg-[#e6eef6] px-4 py-2 rounded-full shadow">
                 {text}
@@ -95,8 +95,8 @@ export default function ProblemSection() {
           </ul>
         </div>
 
-        {/* Seção Como Funciona */}
-        <section id="como-funciona" className="py-16 bg-white">
+        {/* Seção Como Funciona - com mesmo fundo bg-gray-50 */}
+        <section id="como-funciona" className="py-16 bg-gray-50">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {[
               {
@@ -127,10 +127,11 @@ export default function ProblemSection() {
             ))}
           </div>
 
-          {/* Botão CTA */}
-          <button className="mt-4 bg-a1green hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow transition duration-300">
-            Quero Falar com um Médico Agora
-          </button>
+          {/* Botão CTA abaixo da seção "como funciona" */}
+          <div className="text-center mt-12">
+            <button className="bg-a1green hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
+              Quero Falar com um Médico Agora
+            </button>
           </div>
         </section>
       </div>
